@@ -1,0 +1,165 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: warp-ubuntu-2404-x64-4x
+    env:
+      # Serialize the large SDK's library/test checks to avoid overlapping rustc memory.
+      CARGO_BUILD_JOBS: '1'
+      CARGO_PROFILE_DEV_DEBUG: line-tables-only
+      CARGO_PROFILE_TEST_DEBUG: line-tables-only
+      CARGO_INCREMENTAL: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.95.0
+        with:
+          components: clippy,rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - name: Prepare declared validation command tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends ripgrep jq bpftrace
+          command -v rg
+          rg --version
+          command -v jq
+          jq --version
+      - name: Prepare pinned engine and locked dependencies
+        run: |
+          make setup
+          cargo +1.95.0 fetch --locked
+          cargo +1.95.0 fetch --locked --manifest-path tests/fixtures/consumer-resolution/Cargo.toml
+          cargo +1.95.0 install --locked --version 15.0.0 tokei
+      - name: Run ordinary checks with shutdown signal diagnostics
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          import queue
+          import subprocess
+          import threading
+          import time
+
+          ancestor = os.getpid()
+          while ancestor > 1:
+              status = Path(f"/proc/{ancestor}/status").read_text().splitlines()
+              parent = int(next(row.split()[1] for row in status if row.startswith("PPid:")))
+              name = Path(f"/proc/{ancestor}/comm").read_text().strip()
+              print(f"MUSUBI_CI_PROCESS pid={ancestor} ppid={parent} pgid={os.getpgid(ancestor)} comm={name}", flush=True)
+              ancestor = parent
+          print("MUSUBI_CI_PID_MAX " + Path("/proc/sys/kernel/pid_max").read_text().strip(), flush=True)
+          program = r'''
+          BEGIN { printf("MUSUBI_CI_TRACE_STARTING\n"); }
+          tracepoint:signal:signal_generate
+          /args->sig == 2 || args->sig == 15 || args->sig == 9/
+          {
+              printf("MUSUBI_CI_SIGNAL mono_ns=%llu sender_pid=%d sender_comm=%s target_pid=%d target_comm=%s signal=%d\n",
+                     nsecs, pid, comm, args->pid, args->comm, args->sig);
+          }
+          '''
+          # Trace metadata only; make check keeps its original UID and watchdogs.
+          tracer = subprocess.Popen(["sudo", "-n", "timeout", "--signal=INT", "--kill-after=5s",
+                                     "21600s", "bpftrace", "-B", "line", "-e", program],
+                                    stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT, text=True)
+          lines = queue.Queue(maxsize=1024)
+          verified = threading.Event()
+
+          def forward_trace():
+              for line in tracer.stdout:
+                  print(line, end="", flush=True)
+                  if not verified.is_set():
+                      try:
+                          lines.put_nowait(line)
+                      except queue.Full:
+                          pass
+              if not verified.is_set():
+                  try:
+                      lines.put_nowait(None)
+                  except queue.Full:
+                      pass
+
+          reader = threading.Thread(target=forward_trace, daemon=True)
+          reader.start()
+          heartbeat_stop = threading.Event()
+
+          def heartbeat():
+              while not heartbeat_stop.wait(30):
+                  try:
+                      memory = next((row for row in Path("/proc/meminfo").read_text().splitlines()
+                                     if row.startswith("MemAvailable:")), "MemAvailable: unavailable")
+                  except OSError:
+                      memory = "MemAvailable: unavailable"
+                  print(f"MUSUBI_CI_MONITOR_ALIVE mono_ns={time.monotonic_ns()} trace_alive={reader.is_alive()} {memory}", flush=True)
+
+          heartbeater = threading.Thread(target=heartbeat, daemon=True)
+          try:
+              deadline = time.monotonic() + 30
+              probes = set()
+              next_probe = 0
+              while True:
+                  if time.monotonic() >= deadline:
+                      raise RuntimeError("MUSUBI_CI_DIAGNOSTIC_UNAVAILABLE: no owned signal observed")
+                  if time.monotonic() >= next_probe:
+                      probe = subprocess.Popen(["sleep", "30"])
+                      probes.add(probe.pid)
+                      probe.terminate()
+                      probe.wait(timeout=2)
+                      next_probe = time.monotonic() + 1
+                  try:
+                      line = lines.get(timeout=0.1)
+                  except queue.Empty:
+                      continue
+                  if line is None:
+                      raise RuntimeError("MUSUBI_CI_DIAGNOSTIC_UNAVAILABLE: tracer exited")
+                  if (f" sender_pid={os.getpid()} " in line
+                          and line.rstrip().endswith(" signal=15")
+                          and any(f" target_pid={pid} " in line for pid in probes)):
+                      verified.set()
+                      print("MUSUBI_CI_TRACE_VERIFIED: owned child signal observed", flush=True)
+                      break
+              heartbeater.start()
+              # Keep the test tree out of the runner/diagnostic process group.
+              result = subprocess.run(["make", "check"], start_new_session=True)
+              if not reader.is_alive():
+                  print("MUSUBI_CI_DIAGNOSTIC_UNAVAILABLE: tracer stopped during checks", flush=True)
+                  if result.returncode == 0:
+                      raise RuntimeError("tracer stopped during successful checks")
+          finally:
+              heartbeat_stop.set()
+              if heartbeater.ident is not None:
+                  heartbeater.join(timeout=1)
+              # Keep the monitor unreaped; let timeout finish its own group escalation.
+              print("MUSUBI_CI_TRACE_CLEANUP", flush=True)
+              subprocess.run(["sudo", "-n", "kill", "-INT", str(tracer.pid)], check=False, timeout=3)
+              tracer.wait(timeout=12)
+              reader.join(timeout=1)
+              print(f"MUSUBI_CI_TRACE_EXIT status={tracer.returncode}", flush=True)
+          raise SystemExit(result.returncode if result.returncode >= 0 else 128 - result.returncode)
+          PY
+
+  anvil-integration:
+    runs-on: warp-ubuntu-2404-x64-4x
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.95.0
+        with:
+          components: clippy,rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - name: Prepare pinned Foundry for isolated integration tests
+        uses: foundry-rs/foundry-toolchain@dba66c27052e63476d886f22216e119ba7e615bf
+        with:
+          version: v1.9.0
+          cache: false
+      - run: command -v anvil
+      - run: anvil --version
+      - run: cargo +1.95.0 fetch --locked
+      - run: cargo +1.95.0 test --offline --locked -p musubi-alloy --test anvil -- --ignored
+      - run: cargo +1.95.0 test --offline --locked -p musubi-safe --test safe_v141_anvil -- --ignored

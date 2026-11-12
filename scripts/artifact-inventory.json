@@ -1,0 +1,82 @@
+{
+  "schema_version": "musubi/artifact-inventory-v1",
+  "groups": [
+    {
+      "authority": "Safe contracts 1.4.1 pinned npm package and compiler build-info, extracted by scripts/update-safe-v141-assets.sh",
+      "gate": "scripts/check-generated.sh",
+      "files": [
+        {"path": "safe-v141-sdk-input/safe-proxy-v1.4.1.abi.json", "bytes": 271, "sha256": "d11020f6fdef33b16d0ef425ccf24daee7a911edce6ebaae98cd3f3d7074318e"},
+        {"path": "safe-v141-sdk-input/safe-proxy-v1.4.1.creation.json", "bytes": 977, "sha256": "e79e4b5584546ed27eca5ff9fcac2edde5028698f5e43ba87aa3ce582c930ef6"},
+        {"path": "safe-v141-sdk-input/safe-proxy-v1.4.1.metadata.json", "bytes": 3732, "sha256": "f72355dc987499692587b042897d25b08f92653ab35c363d9eb4821dfc3a1e0c"},
+        {"path": "safe-v141-sdk-input/safe-proxy-v1.4.1.runtime.json", "bytes": 347, "sha256": "d3db1f40cf05fc8bdd35a33b961b50a04d7b852debe45d94c7f3e6df90e0e52b"},
+        {"path": "safe-v141-sdk-input/safe-v1.4.1.abi.json", "bytes": 19180, "sha256": "794939ab15e290e0e314f1a31703997171611ff0ed03360700aeee534393bbc4"},
+        {"path": "safe-v141-sdk-input/safe-v1.4.1.creation.json", "bytes": 47245, "sha256": "9b6f4f502446015675be4e28e9efa59d72b7f87426e5bc36c8edf3126bbc295e"},
+        {"path": "safe-v141-sdk-input/safe-v1.4.1.metadata.json", "bytes": 101846, "sha256": "59b025534332eae9d1d300e0c9c1242830537d762f9a967a1e93c5cf3fa9ffb5"},
+        {"path": "safe-v141-sdk-input/safe-v1.4.1.runtime.json", "bytes": 47163, "sha256": "e758b900c7544de4ec1f6994d42859119be9ab0ab41e52201bbda7234c3d49df"}
+      ]
+    },
+    {
+      "authority": "Repo-owned synthetic ABI inputs and named public interface samples; closed source inventory, normal SDK generation and compiler-owned event golden remain independently validated",
+      "gate": "scripts/test-abi-corpus.sh",
+      "files": [
+        {"path": "external-acceptance/abi-corpus-v1/input/.musubi-abi-corpus", "bytes": 21, "sha256": "684fbc5fc46ec2845ad3aa078991773967ad1e2c6f86e609cb52e4819721d888"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/aggregator_v3.json", "bytes": 1342, "sha256": "26ae664a64c6c253b5a65a2777f4227ddca994ada02633b1170546ef2928a39a"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/erc20.json", "bytes": 2190, "sha256": "3596540d5829e56dfd7905efa7609c41ddd2970946e8a413c0ea24c37c70abaf"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/erc20_events.json", "bytes": 969, "sha256": "8757408757749725b39c6f80170683919887be42d3a73b031483732c3e7024f9"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/erc20_metadata.json", "bytes": 447, "sha256": "9be03227b849849154588c6601fe1edd3dfbed7799d2ef7407e1a62ed66b797a"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/erc20_read.json", "bytes": 339, "sha256": "ad7ddc77a5f9c2b5d2d1e1507648ba4f77c60c44b69590d973db0119b7f2fcc3"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/safe_v141.json", "bytes": 3938, "sha256": "9e8811360636d23743a71348b6033afe6ba5cbc19ecafbeec3af001f58cba78d"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_aggregate.json", "bytes": 10837, "sha256": "f2c7b4e6919c460351ec0a9b287bef19076c00b939cada24d0302eae01376e80"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_execution_events.json", "bytes": 20212, "sha256": "254a48a683a963e2c69bcf4f6a22b2687e08757df9bccdab7b68da267a523716"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_executor.json", "bytes": 13624, "sha256": "80020a3e6bee08f6cf3aa0433fdfdf986e398a83f5d2cc5d99da9f0e2aa42e15"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_factory.json", "bytes": 2639, "sha256": "c180a6cfda0547616cb650533b0e74d774589eb9efeb0a21383cf50c9bd1fdec"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_factory_events.json", "bytes": 1219, "sha256": "dd80e6c5510c1f025c29f08ea9bcae1f15b608045bcd6f816057b8985122975c"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_oracle_events.json", "bytes": 555, "sha256": "47ecdbae7959be9b75daa57ce1058ae480c96e990c6cee7771d5420c5377b163"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_preview.json", "bytes": 14922, "sha256": "41d5ec0f52a2ffc72c771be0b886a80404537c7e48ba46214b0760638061ed1b"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_read.json", "bytes": 252, "sha256": "fac4c4b86f55b18d87e23d9584aebd9384d59b49057aa791ac766cac106cdae5"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_registry.json", "bytes": 41515, "sha256": "c40359cbd9657d1f04f956acc3be0561f30a8e34f8a2db8d74a8fab1672bd664"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_registry_events.json", "bytes": 9417, "sha256": "84613cc04b352a3c10120ad70d20855a139b3c3d4cd02fda31cb0075e9aed44d"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/sample_status_events.json", "bytes": 1847, "sha256": "4aaa889e1ad0318e161c3352662549ea3c8f7d11f0aebe6f605af664013d610a"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/uniswap_v3_factory.json", "bytes": 543, "sha256": "7cf42afb50f2031591cc30ec6294d1c25b7442ab4c7b3033dc49426d37696944"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/uniswap_v3_pool.json", "bytes": 2979, "sha256": "8f554d11f679f0ffb30cddf8dfca2fd1e975ab4943b3bac203ad3bafa5f90eea"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/uniswap_v3_pool_events.json", "bytes": 3759, "sha256": "1c34751f26e489848442772d6a1dc8da8115eb4ad9c9270439c483c051bde862"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/uniswap_v3_position_manager.json", "bytes": 8989, "sha256": "fdbae874d3360a811dc03df2bea1eadb6fb4417fbbf50c25e37f4c8eee8b1521"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/uniswap_v3_swap_router.json", "bytes": 1324, "sha256": "11c6fbc48db624946c2287324bdf274018cce9f6ba47686ee2150722fa6217da"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/uniswap_v4_pool_manager_events.json", "bytes": 2010, "sha256": "4512e3e49e76025a0b4b9c1a09596dff1b5f9edf4ab3ecb83ca2df7ddfd3ee47"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/uniswap_v4_position_manager.json", "bytes": 1522, "sha256": "2ba511423a0bcf1b1ccbbe85a15498c74ec32ba0b29028a68a0a79ce473b6eaf"},
+        {"path": "external-acceptance/abi-corpus-v1/input/abi/uniswap_v4_state_view.json", "bytes": 1002, "sha256": "90e263993969123f9975530a16639c90c13a41aa3299b4fc02aaf547f05488d9"},
+        {"path": "external-acceptance/abi-corpus-v1/input/inventory.json", "bytes": 3464, "sha256": "7b0555af8f442f45c251851d07722a4973ebae6211137fe807e580afd5c26df1"},
+        {"path": "external-acceptance/abi-corpus-v1/input/musubi.toml", "bytes": 3416, "sha256": "e635e171202b2e9e75785bfeee8d1ddcd3c81ae687f26c481c2f9a8f1793458f"}
+      ]
+    },
+    {
+      "authority": "Retained event-rebalance-v1 compiler artifact; source, settings and artifact SHA are bound by its evidence vector",
+      "gate": "scripts/test-event-rebalance-acceptance.sh",
+      "files": [
+        {"path": "external-acceptance/event-rebalance-v1/solidity/out/RebalanceEventReference.t.sol/RebalanceEventReferenceTest.json", "bytes": 26469, "sha256": "43d7d9cb7ac237783f47e5d7b6a813d8a1c22de13dbaa490f882ea28221494f1"}
+      ]
+    },
+    {
+      "authority": "Retained typed-data-array-v1 compiler artifact; source, settings and artifact SHA are bound by its evidence vector",
+      "gate": "scripts/test-typed-data-array-acceptance.sh",
+      "files": [
+        {"path": "external-acceptance/typed-data-array-v1/solidity/out/TypedDataArrayReference.t.sol/TypedDataArrayReferenceTest.json", "bytes": 8164, "sha256": "dff5d1a88adb592f33e13d2b385441dbeb06d6d8fa1e924e713abc68057539c8"}
+      ]
+    },
+    {
+      "authority": "Retained typed-data-edge-v1 compiler artifact; source, settings and artifact SHA are bound by its evidence vector",
+      "gate": "scripts/test-typed-data-edge-acceptance.sh",
+      "files": [
+        {"path": "external-acceptance/typed-data-edge-v1/solidity/out/TypedDataEdgeReference.t.sol/TypedDataEdgeReferenceTest.json", "bytes": 7106, "sha256": "50e5fda1aacb1dde31ac618bda8698a26e10a70edadd33ad6ea567416ef9f703"}
+      ]
+    },
+    {
+      "authority": "Unicode 16.0.0 official CaseFolding.txt and Unicode license; scripts/vendor/unicode-16.0.0/README.md",
+      "gate": "scripts/test-generated-ownership.py",
+      "files": [
+        {"path": "scripts/vendor/unicode-16.0.0/CaseFolding.txt", "bytes": 86092, "sha256": "6f1f9c588eb4a5c718d9e8f93b782685e5c7fec872cf05e8e6878053599e09bb"},
+        {"path": "scripts/vendor/unicode-16.0.0/LICENSE.txt", "bytes": 1995, "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"}
+      ]
+    }
+  ]
+}

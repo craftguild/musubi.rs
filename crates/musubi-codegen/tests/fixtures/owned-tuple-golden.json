@@ -1,0 +1,37 @@
+{
+  "producer": "Foundry cast sig/calldata/abi-encode",
+  "abi": [
+    {
+      "type": "function",
+      "name": "decide",
+      "stateMutability": "view",
+      "inputs": [
+        {
+          "name": "decision",
+          "type": "tuple",
+          "internalType": "struct LpvTypes.InitialPlacementDecision",
+          "components": [
+            { "name": "shouldPlace", "type": "bool" },
+            { "name": "targetCenterTick", "type": "int24" },
+            { "name": "targetRangeWidth", "type": "int24" }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "decision",
+          "type": "tuple",
+          "internalType": "struct LpvTypes.RebalanceDecision",
+          "components": [
+            { "name": "shouldRebalance", "type": "bool" },
+            { "name": "targetCenterTick", "type": "int24" },
+            { "name": "targetRangeWidth", "type": "int24" }
+          ]
+        }
+      ]
+    }
+  ],
+  "selector": "0x2674a6e3",
+  "calldata": "0x2674a6e30000000000000000000000000000000000000000000000000000000000000001fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff60000000000000000000000000000000000000000000000000000000000000014",
+  "return_data": "0x0000000000000000000000000000000000000000000000000000000000000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff50000000000000000000000000000000000000000000000000000000000000015"
+}

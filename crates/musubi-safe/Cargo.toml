@@ -1,0 +1,28 @@
+[package]
+name = "musubi-safe"
+description = "Versioned Safe transaction and signature adapter for Musubi"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+musubi-core = { path = "../musubi-core" }
+musubi-runtime = { path = "../musubi-runtime" }
+musubi-safe-v141-generated = { path = "../musubi-safe-v141-generated", version = "=0.1.0" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+alloy-network.workspace = true
+alloy-primitives.workspace = true
+alloy-provider.workspace = true
+alloy-signer.workspace = true
+alloy-signer-local.workspace = true
+musubi-alloy = { path = "../musubi-alloy" }
+tokio.workspace = true
+url.workspace = true
+
+[lints]
+workspace = true

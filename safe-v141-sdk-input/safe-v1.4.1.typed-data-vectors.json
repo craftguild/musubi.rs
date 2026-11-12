@@ -1,0 +1,41 @@
+{
+  "evidence": {
+    "artifact_sha256": "0xc36a5e99bc3f25c2d75ac5f7920b679200b3ce617c0d26e674b1321dbc6b0bdf",
+    "artifact_target": "contracts/Safe.sol:Safe",
+    "compiler_settings_sha256": "0x88a9c25e671f35eb57260765f3c1567c7d00f0d0886bd0feb6cedb2e125639c9",
+    "compiler_version": "0.7.6+commit.7338295f",
+    "solidity_source_path": "safe-contracts-1.4.1/contracts/Safe.sol",
+    "solidity_source_sha256": "0xefd3301ed5c6bf522fb3a7a43be4a27341e65dff6d1fee04f8567f304a67e365",
+    "vector_command": "cargo test -p musubi-safe --test safe_v141_anvil -- --ignored"
+  },
+  "schema_version": "musubi/typed-data-vectors-v1",
+  "vectors": [
+    {
+      "digest": "0x54abba6b7ac0068752dd2da32357cf2505e548b1599508e55193f6d49101e723",
+      "domain": {
+        "chainId": "31337",
+        "verifyingContract": "0x948b3c65b89df0b4894abe91e6d02fe579834f8f"
+      },
+      "domain_separator": "0x6dd4323dbab478cc965d23390bbe1a8ef88b28876856da3b547567bcd0ef5a4b",
+      "domain_type": "EIP712Domain",
+      "domain_type_hash": "0x47e79534a245952e8b16893a336b85a3d9ea9fa8c573f3d803afb92a79469218",
+      "domain_type_string": "EIP712Domain(uint256 chainId,address verifyingContract)",
+      "root": "SafeTx",
+      "struct_hash": "0x29ac27abd58c548be83dccf4f9946756500b2872f560eeda27f78558bc93a820",
+      "type_hash": "0xbb8310d486368db6bd6f849402fdd73ad53d316b5a4b2644ad6efe0f941286d8",
+      "type_string": "SafeTx(address to,uint256 value,bytes data,uint8 operation,uint256 safeTxGas,uint256 baseGas,uint256 gasPrice,address gasToken,address refundReceiver,uint256 nonce)",
+      "value": {
+        "baseGas": "0",
+        "data": "0x",
+        "gasPrice": "0",
+        "gasToken": "0x0000000000000000000000000000000000000000",
+        "nonce": "0",
+        "operation": "0",
+        "refundReceiver": "0x0000000000000000000000000000000000000000",
+        "safeTxGas": "0",
+        "to": "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+        "value": "0"
+      }
+    }
+  ]
+}

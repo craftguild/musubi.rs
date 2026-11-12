@@ -1,0 +1,22 @@
+[package]
+name = "musubi-runtime"
+description = "Codec, operation, deployment, and backend runtime for generated Musubis"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+alloy-dyn-abi.workspace = true
+alloy-primitives.workspace = true
+musubi-core = { path = "../musubi-core" }
+futures.workspace = true
+ruint.workspace = true
+sha3.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+hex.workspace = true
+
+[lints]
+workspace = true

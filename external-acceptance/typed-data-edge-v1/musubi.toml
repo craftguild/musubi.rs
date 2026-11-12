@@ -1,0 +1,20 @@
+schema_version = "musubi/config-v4"
+
+[runtime]
+source = "path"
+root = "../.."
+
+[package]
+name = "musubi-typed-data-edge-acceptance"
+version = "0.1.0"
+edition = "2024"
+
+[generation]
+output = "sdk"
+
+[[typed_data]]
+id = "edge"
+rust_module = "edge"
+authority = "closed-schema-v1"
+schema = "schema.json"
+vectors = "vectors.json"

@@ -1,0 +1,21 @@
+[package]
+name = "musubi"
+description = "Opt-in facade for Musubi components"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[features]
+default = []
+alloy = ["dep:musubi-alloy"]
+safe = ["dep:musubi-safe"]
+
+[dependencies]
+musubi-alloy = { path = "../musubi-alloy", optional = true }
+musubi-core = { path = "../musubi-core" }
+musubi-runtime = { path = "../musubi-runtime" }
+musubi-safe = { path = "../musubi-safe", optional = true }
+
+[lints]
+workspace = true

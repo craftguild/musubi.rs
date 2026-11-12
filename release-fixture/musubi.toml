@@ -1,0 +1,26 @@
+schema_version = "musubi/config-v4"
+
+[runtime]
+source = "path"
+root = ".."
+
+[package]
+name = "release-smoke-sdk"
+version = "0.1.0"
+edition = "2024"
+
+[generation]
+output = "sdk"
+
+[[contracts]]
+id = "release_smoke"
+kind = "deployable"
+abi = "abi.json"
+creation_bytecode = "creation.json"
+
+[[typed_data]]
+id = "release_safe_v141_hash"
+rust_module = "release_safe_v141_typed_data"
+authority = "closed-schema-v1"
+schema = "typed-data-schema.json"
+vectors = "typed-data-vectors.json"

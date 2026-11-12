@@ -1,0 +1,376 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "testRebalanceExecutedLog",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "policyHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "executionNonce",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "poolConfigHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "planHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "intentHash",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "oldPositionIdentifier",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newPositionIdentifier",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "int24",
+          "name": "tickLower",
+          "type": "int24"
+        },
+        {
+          "indexed": false,
+          "internalType": "int24",
+          "name": "tickUpper",
+          "type": "int24"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "swapAmount0In",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "swapAmount1In",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "swapAmount0Out",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "swapAmount1Out",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "principal0Collected",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "principal1Collected",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fee0Collected",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "fee1Collected",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount0Deposited",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount1Deposited",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "idle0After",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "idle1After",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "liquidityAdded",
+          "type": "uint128"
+        }
+      ],
+      "name": "RebalanceExecuted",
+      "type": "event"
+    }
+  ],
+  "bytecode": {
+    "linkReferences": {},
+    "object": "0x60808060405234601557610860908161001a8239f35b5f80fdfe6080806040526004361015610012575f80fd5b5f905f3560e01c636545b70614610027575f80fd5b346107b7575f3660031901126107b757737109709ecfa91a80626ff3989d68f67f5b1dd12d3b156107b7576320d797a960e11b81525f8160048183737109709ecfa91a80626ff3989d68f67f5b1dd12d5af180156107ac57610799575b507f222222222222222222222222222222222222222222222222222222222222222260077f11111111111111111111111111111111111111111111111111111111111111117fd33968777656eecd2c4cb81a164f6806e4dbb09307eff94ae114bfdb610f0d866102606040517f333333333333333333333333333333333333333333333333333333333333333381527f4444444444444444444444444444444444444444444444444444444444444444602082015260016040820152600260608201526001196080820152600360a0820152600460c0820152600560e082015260066101008201528461012082015260086101408201526009610160820152600a610180820152600b6101a0820152600c6101c0820152600d6101e0820152600e610200820152600f6102208201526010610240820152a460405163064554e960e21b8152818160048183737109709ecfa91a80626ff3989d68f67f5b1dd12d5af190811561078e57829161056a575b50600181510361053957600461020982610809565b51515103610506577fd33968777656eecd2c4cb81a164f6806e4dbb09307eff94ae114bfdb610f0d8661024561023e83610809565b5151610809565b51036104cf5761025481610809565b515180516001101561045457604001517feeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef0161049b5761029381610809565b5151805160021015610454576060015160061901610468576102b481610809565b515180516003101561045457608001517fddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddde01610422576040519060206103da818401927f333333333333333333333333333333333333333333333333333333333333333384527f44444444444444444444444444444444444444444444444444444444444444446040860152600160608601526002608086015260011960a0860152600360c0860152600460e086015260056101008601526006610120860152600761014086015260086101608601526009610180860152600a6101a0860152600b6101c0860152600c6101e0860152600d610200860152600e610220860152600f610240860152601061026086015261026085526103d5610280866107bb565b610809565b5101516020815191012091519020036103f05780f35b60405162461bcd60e51b815260206004820152600a6024820152696576656e74206461746160b01b6044820152606490fd5b60405162461bcd60e51b815260206004820152600a602482015269706f6f6c20746f70696360b01b6044820152606490fd5b634e487b7160e01b83526032600452602483fd5b60405162461bcd60e51b815260206004820152600b60248201526a6e6f6e636520746f70696360a81b6044820152606490fd5b60405162461bcd60e51b815260206004820152600c60248201526b706f6c69637920746f70696360a01b6044820152606490fd5b60405162461bcd60e51b815260206004820152600f60248201526e7369676e617475726520746f70696360881b6044820152606490fd5b60405162461bcd60e51b815260206004820152600b60248201526a1d1bdc1a58c818dbdd5b9d60aa1b6044820152606490fd5b60405162461bcd60e51b81526020600482015260096024820152681b1bd9c818dbdd5b9d60ba1b6044820152606490fd5b90503d8083833e61057b81836107bb565b8101906020818303126107865780519067ffffffffffffffff821161078a57019080601f83011215610786578151916105b3836107f1565b926105c160405194856107bb565b80845260208085019160051b830101918383116107825760208101915b8383106105f05750505050505f6101f4565b825167ffffffffffffffff811161077e578201906060828703601f19011261077e57604051916060830183811067ffffffffffffffff82111761076a57604052602081015167ffffffffffffffff81116107525760209082010187601f8201121561075257805190610661826107f1565b9161066f60405193846107bb565b80835260208084019160051b830101918a831161076657602001905b828210610756575050508352604081015167ffffffffffffffff8111610752576020908201019087601f830112156107525781519167ffffffffffffffff831161073e578a604051916106e86020601f19601f88011601846107bb565b8483528a6020868301011161073a578460609560208093018386015e8301015260208501520151906001600160a01b03821682036107365782602093926040859401528152019201916105de565b8880fd5b5080fd5b634e487b7160e01b8b52604160045260248bfd5b8980fd5b815181526020918201910161068b565b8c80fd5b634e487b7160e01b8a52604160045260248afd5b8780fd5b8580fd5b8280fd5b8380fd5b6040513d84823e3d90fd5b6107a591505f906107bb565b5f80610084565b6040513d5f823e3d90fd5b5f80fd5b90601f8019910116810190811067ffffffffffffffff8211176107dd57604052565b634e487b7160e01b5f52604160045260245ffd5b67ffffffffffffffff81116107dd5760051b60200190565b8051156108165760200190565b634e487b7160e01b5f52603260045260245ffdfea2646970667358221220571914dbc1a4fa8b4e68005e694bea9039c78927420a4403cd2812b420af85be64736f6c634300081a0033",
+    "sourceMap": "373:2920:0:-:0;;;;;;;;;;;;;;;;;"
+  },
+  "deployedBytecode": {
+    "linkReferences": {},
+    "object": "0x6080806040526004361015610012575f80fd5b5f905f3560e01c636545b70614610027575f80fd5b346107b7575f3660031901126107b757737109709ecfa91a80626ff3989d68f67f5b1dd12d3b156107b7576320d797a960e11b81525f8160048183737109709ecfa91a80626ff3989d68f67f5b1dd12d5af180156107ac57610799575b507f222222222222222222222222222222222222222222222222222222222222222260077f11111111111111111111111111111111111111111111111111111111111111117fd33968777656eecd2c4cb81a164f6806e4dbb09307eff94ae114bfdb610f0d866102606040517f333333333333333333333333333333333333333333333333333333333333333381527f4444444444444444444444444444444444444444444444444444444444444444602082015260016040820152600260608201526001196080820152600360a0820152600460c0820152600560e082015260066101008201528461012082015260086101408201526009610160820152600a610180820152600b6101a0820152600c6101c0820152600d6101e0820152600e610200820152600f6102208201526010610240820152a460405163064554e960e21b8152818160048183737109709ecfa91a80626ff3989d68f67f5b1dd12d5af190811561078e57829161056a575b50600181510361053957600461020982610809565b51515103610506577fd33968777656eecd2c4cb81a164f6806e4dbb09307eff94ae114bfdb610f0d8661024561023e83610809565b5151610809565b51036104cf5761025481610809565b515180516001101561045457604001517feeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef0161049b5761029381610809565b5151805160021015610454576060015160061901610468576102b481610809565b515180516003101561045457608001517fddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddde01610422576040519060206103da818401927f333333333333333333333333333333333333333333333333333333333333333384527f44444444444444444444444444444444444444444444444444444444444444446040860152600160608601526002608086015260011960a0860152600360c0860152600460e086015260056101008601526006610120860152600761014086015260086101608601526009610180860152600a6101a0860152600b6101c0860152600c6101e0860152600d610200860152600e610220860152600f610240860152601061026086015261026085526103d5610280866107bb565b610809565b5101516020815191012091519020036103f05780f35b60405162461bcd60e51b815260206004820152600a6024820152696576656e74206461746160b01b6044820152606490fd5b60405162461bcd60e51b815260206004820152600a602482015269706f6f6c20746f70696360b01b6044820152606490fd5b634e487b7160e01b83526032600452602483fd5b60405162461bcd60e51b815260206004820152600b60248201526a6e6f6e636520746f70696360a81b6044820152606490fd5b60405162461bcd60e51b815260206004820152600c60248201526b706f6c69637920746f70696360a01b6044820152606490fd5b60405162461bcd60e51b815260206004820152600f60248201526e7369676e617475726520746f70696360881b6044820152606490fd5b60405162461bcd60e51b815260206004820152600b60248201526a1d1bdc1a58c818dbdd5b9d60aa1b6044820152606490fd5b60405162461bcd60e51b81526020600482015260096024820152681b1bd9c818dbdd5b9d60ba1b6044820152606490fd5b90503d8083833e61057b81836107bb565b8101906020818303126107865780519067ffffffffffffffff821161078a57019080601f83011215610786578151916105b3836107f1565b926105c160405194856107bb565b80845260208085019160051b830101918383116107825760208101915b8383106105f05750505050505f6101f4565b825167ffffffffffffffff811161077e578201906060828703601f19011261077e57604051916060830183811067ffffffffffffffff82111761076a57604052602081015167ffffffffffffffff81116107525760209082010187601f8201121561075257805190610661826107f1565b9161066f60405193846107bb565b80835260208084019160051b830101918a831161076657602001905b828210610756575050508352604081015167ffffffffffffffff8111610752576020908201019087601f830112156107525781519167ffffffffffffffff831161073e578a604051916106e86020601f19601f88011601846107bb565b8483528a6020868301011161073a578460609560208093018386015e8301015260208501520151906001600160a01b03821682036107365782602093926040859401528152019201916105de565b8880fd5b5080fd5b634e487b7160e01b8b52604160045260248bfd5b8980fd5b815181526020918201910161068b565b8c80fd5b634e487b7160e01b8a52604160045260248afd5b8780fd5b8580fd5b8280fd5b8380fd5b6040513d84823e3d90fd5b6107a591505f906107bb565b5f80610084565b6040513d5f823e3d90fd5b5f80fd5b90601f8019910116810190811067ffffffffffffffff8211176107dd57604052565b634e487b7160e01b5f52604160045260245ffd5b67ffffffffffffffff81116107dd5760051b60200190565b8051156108165760200190565b634e487b7160e01b5f52603260045260245ffdfea2646970667358221220571914dbc1a4fa8b4e68005e694bea9039c78927420a4403cd2812b420af85be64736f6c634300081a0033",
+    "sourceMap": "373:2920:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;373:2920:0;;;;;1786:15;;;;-1:-1:-1;;;1786:15:0;;373:2920;1786:15;373:2920;1786:15;373:2920;;1786:15;;;;;;;;373:2920;;567:69;1860:1;452:70;1816:149;905:69;373:2920;;679:69;905;;791;905;;;;1898:1;373:2920;905:69;;;1901:1;905:69;;;;1904:2;;905:69;;;;1908:1;905:69;;;;373:2920;905:69;;;;1914:1;373:2920;905:69;;;1917:1;905:69;;;;;;;;;1923:1;905:69;;;;1926:1;905:69;;;;1929:2;905:69;;;;1933:2;905:69;;;;1937:2;905:69;;;;1941:2;905:69;;;;1945:2;905:69;;;;1949:2;905:69;;;;1953:2;905:69;;;;1816:149;373:2920;;-1:-1:-1;;;2009:20:0;;;373:2920;;;2009:20;373:2920;2009:20;;;;;;;;;;;373:2920;905:69;1898:1;905:69;;2047:16;905:69;;373:2920;2095:7;;;:::i;:::-;;:14;905:69;2095:26;905:69;;1816:149;2168:17;:7;;;:::i;:::-;;:14;:17;:::i;:::-;905:69;2168:278;905:69;;2505:7;;;:::i;:::-;;:14;905:69;;1898:1;905:69;;;;373:2920;905:69;;2505:32;;905:69;;2572:7;;;:::i;:::-;;:14;905:69;;1901:1;905:69;;;;;;;-1:-1:-1;;2572:40:0;905:69;;2646:7;;;:::i;:::-;;:14;905:69;;1908:1;905:69;;;;;;;2646:30;;905:69;;373:2920;;2725:480;905:69;3233:7;2725:480;;;905:69;679;905;;791;373:2920;905:69;;;1898:1;905:69;;;;1901:1;905:69;;;;1904:2;;905:69;;;;1908:1;905:69;;;;373:2920;;905:69;;;1914:1;905:69;;;;1917:1;905:69;;;;1860:1;905:69;;;;1923:1;905:69;;;;1926:1;905:69;;;;1929:2;905:69;;;;1933:2;905:69;;;;1937:2;905:69;;;;1941:2;905:69;;;;1945:2;905:69;;;;1949:2;905:69;;;;1953:2;905:69;;;;;2725:480;;;;;;:::i;:::-;3233:7;:::i;:::-;;:12;;905:69;;;;;3223:23;905:69;;3250:19;;3223:46;905:69;;373:2920;;905:69;373:2920;;-1:-1:-1;;;905:69:0;;;373:2920;905:69;;;1929:2;905:69;;;;-1:-1:-1;;;905:69:0;;;;;;;;373:2920;;-1:-1:-1;;;905:69:0;;;373:2920;905:69;;;1929:2;905:69;;;;-1:-1:-1;;;905:69:0;;;;;;;;-1:-1:-1;;;905:69:0;;;373:2920;905:69;;452:70;905:69;;373:2920;;-1:-1:-1;;;905:69:0;;;373:2920;905:69;;;1933:2;905:69;;;;-1:-1:-1;;;905:69:0;;;;;;;;373:2920;;-1:-1:-1;;;905:69:0;;;373:2920;905:69;;;1937:2;905:69;;;;-1:-1:-1;;;905:69:0;;;;;;;;373:2920;;-1:-1:-1;;;905:69:0;;;373:2920;905:69;;;1949:2;905:69;;;;-1:-1:-1;;;905:69:0;;;;;;;;373:2920;;-1:-1:-1;;;905:69:0;;;373:2920;905:69;;;1933:2;905:69;;;;-1:-1:-1;;;905:69:0;;;;;;;;373:2920;;-1:-1:-1;;;905:69:0;;;373:2920;905:69;;;1926:1;905:69;;;;-1:-1:-1;;;905:69:0;;;;;;;2009:20;;;;;;;;;;;;:::i;:::-;;;905:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;373:2920;905:69;373:2920;;905:69;;;:::i;:::-;;;;;;;;;1914:1;905:69;;;;;;;;;;;;;;;;;;;;2009:20;;;;;;;;905:69;;;;;;;;;;;;;;;-1:-1:-1;;905:69:0;;;;373:2920;;452:70;905:69;452:70;;;;;905:69;452:70;;;;;373:2920;452:70;905:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;373:2920;905:69;373:2920;;905:69;;;:::i;:::-;;;;;;;;;1914:1;905:69;;;;;;;;;;;;;;;;;;;;;;;;373:2920;905:69;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;373:2920;;;452:70;905:69;;452:70;;905:69;452:70;;;905:69;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;373:2920:0;;905:69;;;;;;;;373:2920;905:69;;;;;;;;;;;;;;;;;373:2920;;;905:69;-1:-1:-1;;;452:70:0;;;373:2920;452:70;;;;905:69;373:2920;;;905:69;;;;;;;;;;;;;;373:2920;;;452:70;-1:-1:-1;;;452:70:0;;;373:2920;452:70;;;;905:69;373:2920;;;905:69;373:2920;;;905:69;373:2920;;;905:69;373:2920;;;2009:20;373:2920;;452:70;373:2920;;452:70;;;;1786:15;;;;373:2920;1786:15;;:::i;:::-;373:2920;1786:15;;;;373:2920;;452:70;373:2920;452:70;;;;;1786:15;373:2920;;;452:70;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;-1:-1:-1;452:70:0;;;;;-1:-1:-1;452:70:0;905:69;;;;;;;;;;;:::o;:::-;;;;;;;;;:::o;:::-;452:70;;;373:2920;905:69;;;;;373:2920;905:69"
+  },
+  "id": 0,
+  "metadata": {
+    "compiler": {
+      "version": "0.8.26+commit.8a97fa7a"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "policyHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "executionNonce",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "poolConfigHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "bytes32",
+              "name": "planHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "bytes32",
+              "name": "intentHash",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "oldPositionIdentifier",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "newPositionIdentifier",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "int24",
+              "name": "tickLower",
+              "type": "int24"
+            },
+            {
+              "indexed": false,
+              "internalType": "int24",
+              "name": "tickUpper",
+              "type": "int24"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "swapAmount0In",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "swapAmount1In",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "swapAmount0Out",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "swapAmount1Out",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "principal0Collected",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "principal1Collected",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "fee0Collected",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "fee1Collected",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount0Deposited",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount1Deposited",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "idle0After",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "idle1After",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint128",
+              "name": "liquidityAdded",
+              "type": "uint128"
+            }
+          ],
+          "name": "RebalanceExecuted",
+          "type": "event"
+        },
+        {
+          "inputs": [],
+          "name": "testRebalanceExecutedLog",
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "compilationTarget": {
+        "test/RebalanceEventReference.t.sol": "RebalanceEventReferenceTest"
+      },
+      "evmVersion": "cancun",
+      "libraries": {},
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "remappings": [
+        "@ensdomains/=lib/v4-core/node_modules/@ensdomains/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@uniswap/v3-core/=lib/v3-core/",
+        "@uniswap/v3-periphery/=lib/v3-periphery/",
+        "@uniswap/v4-core/=lib/v4-core/",
+        "@uniswap/v4-periphery/=lib/v4-periphery/",
+        "ds-test/=lib/v4-core/lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/v4-periphery/lib/v4-core/lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-gas-snapshot/=lib/v4-periphery/lib/permit2/lib/forge-gas-snapshot/src/",
+        "forge-std/=lib/v4-periphery/lib/v4-core/lib/forge-std/src/",
+        "hardhat/=lib/v4-core/node_modules/hardhat/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "permit2/=lib/v4-periphery/lib/permit2/",
+        "solmate/=lib/v4-periphery/lib/v4-core/lib/solmate/",
+        "v3-core/=lib/v3-core/",
+        "v3-periphery/=lib/v3-periphery/contracts/",
+        "v4-core/=lib/v4-core/src/",
+        "v4-periphery/=lib/v4-periphery/"
+      ],
+      "viaIR": true
+    },
+    "sources": {
+      "test/RebalanceEventReference.t.sol": {
+        "keccak256": "0x0d65d6db769f823070f5d717526024a59a222a6fdb05f28f551171177d17e083",
+        "license": "UNLICENSED",
+        "urls": [
+          "bzz-raw://bcb5478658246466d480bea970a14be800b73c93813abff2b1c0b47caf3f35de",
+          "dweb:/ipfs/QmWXW9VbkrU9nvbapXxKrZTnrNhqRMNTvaVhpGQSN5nC7C"
+        ]
+      }
+    },
+    "version": 1
+  },
+  "methodIdentifiers": {
+    "testRebalanceExecutedLog()": "6545b706"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"policyHash\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"executionNonce\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"poolConfigHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"planHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"intentHash\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldPositionIdentifier\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newPositionIdentifier\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"int24\",\"name\":\"tickLower\",\"type\":\"int24\"},{\"indexed\":false,\"internalType\":\"int24\",\"name\":\"tickUpper\",\"type\":\"int24\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"swapAmount0In\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"swapAmount1In\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"swapAmount0Out\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"swapAmount1Out\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"principal0Collected\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"principal1Collected\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fee0Collected\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fee1Collected\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount0Deposited\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount1Deposited\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"idle0After\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"idle1After\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint128\",\"name\":\"liquidityAdded\",\"type\":\"uint128\"}],\"name\":\"RebalanceExecuted\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"testRebalanceExecutedLog\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"External emitted-log reference harness for the lab02 generated event codec.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/RebalanceEventReference.t.sol\":\"RebalanceEventReferenceTest\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@ensdomains/=lib/v4-core/node_modules/@ensdomains/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap/v3-core/=lib/v3-core/\",\":@uniswap/v3-periphery/=lib/v3-periphery/\",\":@uniswap/v4-core/=lib/v4-core/\",\":@uniswap/v4-periphery/=lib/v4-periphery/\",\":ds-test/=lib/v4-core/lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/v4-periphery/lib/v4-core/lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-gas-snapshot/=lib/v4-periphery/lib/permit2/lib/forge-gas-snapshot/src/\",\":forge-std/=lib/v4-periphery/lib/v4-core/lib/forge-std/src/\",\":hardhat/=lib/v4-core/node_modules/hardhat/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":permit2/=lib/v4-periphery/lib/permit2/\",\":solmate/=lib/v4-periphery/lib/v4-core/lib/solmate/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\",\":v4-core/=lib/v4-core/src/\",\":v4-periphery/=lib/v4-periphery/\"],\"viaIR\":true},\"sources\":{\"test/RebalanceEventReference.t.sol\":{\"keccak256\":\"0x0d65d6db769f823070f5d717526024a59a222a6fdb05f28f551171177d17e083\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://bcb5478658246466d480bea970a14be800b73c93813abff2b1c0b47caf3f35de\",\"dweb:/ipfs/QmWXW9VbkrU9nvbapXxKrZTnrNhqRMNTvaVhpGQSN5nC7C\"]}},\"version\":1}"
+}

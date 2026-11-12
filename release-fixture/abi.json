@@ -1,0 +1,9 @@
+[
+  {
+    "type": "function",
+    "name": "owner",
+    "stateMutability": "view",
+    "inputs": [],
+    "outputs": [{ "name": "owner", "type": "address" }]
+  }
+]

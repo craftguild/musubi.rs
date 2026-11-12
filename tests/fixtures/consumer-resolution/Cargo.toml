@@ -1,0 +1,20 @@
+[package]
+name = "musubi-consumer-resolution"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.95"
+publish = false
+
+[workspace]
+
+[dependencies]
+alloy-consensus = { version = "=2.3.0", features = ["secp256k1"] }
+alloy-eips = "=2.3.0"
+alloy-primitives = "=1.6.1"
+alloy-sol-types = "=1.6.1"
+musubi-core = { path = "../../../crates/musubi-core" }
+musubi-runtime = { path = "../../../crates/musubi-runtime" }
+ruint = "=1.20.0"
+serde = "=1.0.229"
+serde_json = "=1.0.151"
+url = "=2.5.8"

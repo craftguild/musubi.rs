@@ -1,0 +1,580 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint8",
+        "name": "fixtureParameterForAbiCoverage002",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address",
+        "name": "fixtureParameterForAbiCoverage003",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "fixtureParameterForAbiCoverage004",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fixtureParameterForAbiCoverage005",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fixtureParameterForAbiCoverage006",
+        "type": "uint256"
+      }
+    ],
+    "name": "fixtureOperationForAbiCoverage000",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "fixtureParameterForAbiCoverage000",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage001",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage002",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage003",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage004",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint8",
+            "name": "fixtureParameterForAbiCoverage005",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "fixtureParameterForAbiCoverage006",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage007",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "fixtureParameterForAbiCoverage008",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage009",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "fixtureParameterForAbiCoverage010",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage011",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage012",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "fixtureParameterForAbiCoverage013",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage014",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage015",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "fixtureParameterForAbiCoverage016",
+            "type": "bytes32"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint16",
+                "name": "fixtureParameterForAbiCoverage000",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "fixtureParameterForAbiCoverage001",
+                "type": "uint16"
+              },
+              {
+                "internalType": "int24",
+                "name": "fixtureParameterForAbiCoverage002",
+                "type": "int24"
+              },
+              {
+                "internalType": "int24",
+                "name": "fixtureParameterForAbiCoverage003",
+                "type": "int24"
+              },
+              {
+                "internalType": "uint16",
+                "name": "fixtureParameterForAbiCoverage004",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint32",
+                "name": "fixtureParameterForAbiCoverage005",
+                "type": "uint32"
+              }
+            ],
+            "internalType": "struct FixtureTupleForAbiCoverage013",
+            "name": "fixtureParameterForAbiCoverage017",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint64",
+            "name": "fixtureParameterForAbiCoverage018",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "fixtureParameterForAbiCoverage019",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "fixtureParameterForAbiCoverage020",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct FixtureTupleForAbiCoverage012",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "bytes"
+      },
+      {
+        "internalType": "bytes",
+        "name": "fixtureParameterForAbiCoverage002",
+        "type": "bytes"
+      }
+    ],
+    "name": "fixtureOperationForAbiCoverage001",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage002",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage003",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage004",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage005",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage006",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "bytes"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "fixtureParameterForAbiCoverage002",
+        "type": "uint64"
+      }
+    ],
+    "name": "fixtureOperationForAbiCoverage007",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "bytes"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fixtureParameterForAbiCoverage002",
+        "type": "uint256"
+      }
+    ],
+    "name": "fixtureOperationForAbiCoverage008",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage009",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "bytes"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "fixtureParameterForAbiCoverage002",
+        "type": "uint64"
+      }
+    ],
+    "name": "fixtureOperationForAbiCoverage010",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage011",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage012",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage013",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage014",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fixtureParameterForAbiCoverage002",
+        "type": "uint256"
+      }
+    ],
+    "name": "fixtureOperationForAbiCoverage015",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage016",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage017",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage018",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage019",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage020",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage021",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage022",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage023",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage024",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage025",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage026",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "address[]"
+      }
+    ],
+    "name": "fixtureOperationForAbiCoverage027",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "fixtureOperationForAbiCoverage028",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

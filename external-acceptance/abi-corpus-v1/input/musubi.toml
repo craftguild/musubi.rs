@@ -1,0 +1,163 @@
+schema_version = "musubi/config-v4"
+
+[runtime]
+source = "path"
+root = "../../.."
+
+[package]
+name = "musubi-abi-corpus"
+version = "0.1.0"
+edition = "2024"
+
+[generation]
+output = "sdk"
+
+[[contracts]]
+id = "aggregator_v3"
+rust_module = "aggregator_v3"
+kind = "interface"
+abi = "abi/aggregator_v3.json"
+
+[[contracts]]
+id = "erc20"
+rust_module = "erc20"
+kind = "interface"
+abi = "abi/erc20.json"
+
+[[contracts]]
+id = "erc20_events"
+rust_module = "erc20_events"
+kind = "interface"
+abi = "abi/erc20_events.json"
+
+[[contracts]]
+id = "erc20_metadata"
+rust_module = "erc20_metadata"
+kind = "interface"
+abi = "abi/erc20_metadata.json"
+
+[[contracts]]
+id = "erc20_read"
+rust_module = "erc20_read"
+kind = "interface"
+abi = "abi/erc20_read.json"
+
+[[contracts]]
+id = "safe_v141"
+rust_module = "safe_v141"
+kind = "interface"
+abi = "abi/safe_v141.json"
+
+[[contracts]]
+id = "sample_aggregate"
+rust_module = "sample_aggregate"
+kind = "interface"
+abi = "abi/sample_aggregate.json"
+
+[[contracts]]
+id = "sample_execution_events"
+rust_module = "sample_execution_events"
+kind = "interface"
+abi = "abi/sample_execution_events.json"
+
+[[contracts]]
+id = "sample_executor"
+rust_module = "sample_executor"
+kind = "interface"
+abi = "abi/sample_executor.json"
+
+[[contracts]]
+id = "sample_factory"
+rust_module = "sample_factory"
+kind = "interface"
+abi = "abi/sample_factory.json"
+
+[[contracts]]
+id = "sample_factory_events"
+rust_module = "sample_factory_events"
+kind = "interface"
+abi = "abi/sample_factory_events.json"
+
+[[contracts]]
+id = "sample_oracle_events"
+rust_module = "sample_oracle_events"
+kind = "interface"
+abi = "abi/sample_oracle_events.json"
+
+[[contracts]]
+id = "sample_preview"
+rust_module = "sample_preview"
+kind = "interface"
+abi = "abi/sample_preview.json"
+
+[[contracts]]
+id = "sample_read"
+rust_module = "sample_read"
+kind = "interface"
+abi = "abi/sample_read.json"
+
+[[contracts]]
+id = "sample_registry"
+rust_module = "sample_registry"
+kind = "interface"
+abi = "abi/sample_registry.json"
+
+[[contracts]]
+id = "sample_registry_events"
+rust_module = "sample_registry_events"
+kind = "interface"
+abi = "abi/sample_registry_events.json"
+
+[[contracts]]
+id = "sample_status_events"
+rust_module = "sample_status_events"
+kind = "interface"
+abi = "abi/sample_status_events.json"
+
+[[contracts]]
+id = "uniswap_v3_factory"
+rust_module = "uniswap_v3_factory"
+kind = "interface"
+abi = "abi/uniswap_v3_factory.json"
+
+[[contracts]]
+id = "uniswap_v3_pool"
+rust_module = "uniswap_v3_pool"
+kind = "interface"
+abi = "abi/uniswap_v3_pool.json"
+
+[[contracts]]
+id = "uniswap_v3_pool_events"
+rust_module = "uniswap_v3_pool_events"
+kind = "interface"
+abi = "abi/uniswap_v3_pool_events.json"
+
+[[contracts]]
+id = "uniswap_v3_position_manager"
+rust_module = "uniswap_v3_position_manager"
+kind = "interface"
+abi = "abi/uniswap_v3_position_manager.json"
+
+[[contracts]]
+id = "uniswap_v3_swap_router"
+rust_module = "uniswap_v3_swap_router"
+kind = "interface"
+abi = "abi/uniswap_v3_swap_router.json"
+
+[[contracts]]
+id = "uniswap_v4_pool_manager_events"
+rust_module = "uniswap_v4_pool_manager_events"
+kind = "interface"
+abi = "abi/uniswap_v4_pool_manager_events.json"
+
+[[contracts]]
+id = "uniswap_v4_position_manager"
+rust_module = "uniswap_v4_position_manager"
+kind = "interface"
+abi = "abi/uniswap_v4_position_manager.json"
+
+[[contracts]]
+id = "uniswap_v4_state_view"
+rust_module = "uniswap_v4_state_view"
+kind = "interface"
+abi = "abi/uniswap_v4_state_view.json"

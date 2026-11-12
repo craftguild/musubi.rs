@@ -1,0 +1,20 @@
+schema_version = "musubi/config-v4"
+
+[runtime]
+source = "path"
+root = "../.."
+
+[package]
+name = "musubi-typed-data-array-acceptance"
+version = "0.1.0"
+edition = "2024"
+
+[generation]
+output = "sdk"
+
+[[typed_data]]
+id = "group"
+rust_module = "group"
+authority = "closed-schema-v1"
+schema = "schema.json"
+vectors = "vectors.json"

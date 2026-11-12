@@ -1,0 +1,81 @@
+{
+  "contracts": [
+    {
+      "ast_sha256": null,
+      "canonical_abi_sha256": "d11020f6fdef33b16d0ef425ccf24daee7a911edce6ebaae98cd3f3d7074318e",
+      "creation_template_keccak256": "1856e0ee08399d74e0ea0b03adca210aeade6f748969ac023cdcb4dd62dcaf5f",
+      "external_artifact_coherence": "unverified",
+      "id": "safe_proxy_v141",
+      "kind": "deployable",
+      "metadata_sha256": "f72355dc987499692587b042897d25b08f92653ab35c363d9eb4821dfc3a1e0c",
+      "raw_abi_sha256": "d11020f6fdef33b16d0ef425ccf24daee7a911edce6ebaae98cd3f3d7074318e",
+      "runtime_template_keccak256": "d7d408ebcd99b2b70be43e20253d6d92a8ea8fab29bd3be7f55b10032331fb4c",
+      "rust_module": "safe_proxy_v141",
+      "storage_layout_sha256": null
+    },
+    {
+      "ast_sha256": null,
+      "canonical_abi_sha256": "205b08ade2d1f0b878cdf3af53ff16aa5e43b42968b5b881b4c30e527ee1074f",
+      "creation_template_keccak256": "bdd9e3833a8bdf0f6b4312e07bc851afc298d53690a00a28cade5de8b6ac0f36",
+      "external_artifact_coherence": "unverified",
+      "id": "safe_v141",
+      "kind": "deployable",
+      "metadata_sha256": "59b025534332eae9d1d300e0c9c1242830537d762f9a967a1e93c5cf3fa9ffb5",
+      "raw_abi_sha256": "794939ab15e290e0e314f1a31703997171611ff0ed03360700aeee534393bbc4",
+      "runtime_template_keccak256": "1fe2df852ba3299d6534ef416eefa406e56ced995bca886ab7a553e6d0c5e1c4",
+      "rust_module": "safe_v141",
+      "storage_layout_sha256": null
+    }
+  ],
+  "generated_abi_version": 2,
+  "generator": {
+    "schema_version": "musubi/generator-info-v1",
+    "version": "0.1.0",
+    "revision": "cb83be7fabee3c4828c7122e6831177df2faae36-dirty",
+    "git_commit": "cb83be7fabee3c4828c7122e6831177df2faae36",
+    "dirty": true,
+    "build": {
+      "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+      "host": "aarch64-apple-darwin",
+      "target": "aarch64-apple-darwin",
+      "profile": "debug"
+    }
+  },
+  "manifest_schema": "musubi/config-v4",
+  "manifest_sha256": "0xa29731e9ad3d1f4b721c1d19255e10b608dcde4497707087962d828fcaf761ac",
+  "package": {
+    "name": "musubi-safe-v141-generated",
+    "version": "0.1.0"
+  },
+  "runtime": {
+    "source": "path",
+    "root": "../../."
+  },
+  "schema_version": "musubi/release-v4",
+  "typed_data": [
+    {
+      "evidence": {
+        "artifact_sha256": "0xc36a5e99bc3f25c2d75ac5f7920b679200b3ce617c0d26e674b1321dbc6b0bdf",
+        "artifact_target": "contracts/Safe.sol:Safe",
+        "compiler_settings_sha256": "0x88a9c25e671f35eb57260765f3c1567c7d00f0d0886bd0feb6cedb2e125639c9",
+        "compiler_version": "0.7.6+commit.7338295f",
+        "solidity_source_sha256": "0xefd3301ed5c6bf522fb3a7a43be4a27341e65dff6d1fee04f8567f304a67e365",
+        "vector_command_sha256": "0x5adc0cdd6013298eeb13f1fa1bc23ad79191a02fbfdf18f39b4147eeaad6d1fb"
+      },
+      "id": "safe_v141_hash",
+      "roots": [
+        {
+          "domain_type": "EIP712Domain",
+          "domain_type_hash": "0x47e79534a245952e8b16893a336b85a3d9ea9fa8c573f3d803afb92a79469218",
+          "domain_type_string": "EIP712Domain(uint256 chainId,address verifyingContract)",
+          "primary_type": "SafeTx",
+          "type_hash": "0xbb8310d486368db6bd6f849402fdd73ad53d316b5a4b2644ad6efe0f941286d8",
+          "type_string": "SafeTx(address to,uint256 value,bytes data,uint8 operation,uint256 safeTxGas,uint256 baseGas,uint256 gasPrice,address gasToken,address refundReceiver,uint256 nonce)"
+        }
+      ],
+      "rust_module": "safe_v141_typed_data",
+      "schema_sha256": "0xfa1dbf1a2b6dcb0528e4c6fc0c3b248b85a9be8da17b5d68cb45d29582a57e44",
+      "vectors_sha256": "0xfb1f8a8b45507aae6727d7c8d018e27069462c04758546a8d907819b9a3e266b"
+    }
+  ]
+}

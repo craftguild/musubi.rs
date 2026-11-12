@@ -1,0 +1,33 @@
+{
+  "roots": [
+    {
+      "kind": "struct_hash",
+      "type": "Group"
+    }
+  ],
+  "schema_version": "musubi/typed-data-schema-v1",
+  "types": [
+    {
+      "fields": [
+        {
+          "name": "members",
+          "type": "Person[]"
+        }
+      ],
+      "name": "Group"
+    },
+    {
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "wallet",
+          "type": "address"
+        }
+      ],
+      "name": "Person"
+    }
+  ]
+}

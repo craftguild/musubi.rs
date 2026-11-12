@@ -1,0 +1,98 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "testGroupVector",
+      "outputs": [],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "linkReferences": {},
+    "object": "0x60808060405234601557610269908161001a8239f35b5f80fdfe60806040526004361015610011575f80fd5b5f3560e01c6371e5520114610024575f80fd5b346101f9575f3660031901126101f9577f6ceef4da3b8605bf55265a94cccf738064cb934b396231e09588e696d49bb3576040516100636040826101fd565b60058152602081019064416c69636560d81b825251902060405160208101917fb9d8c78acf9b987311de6c7b45bb6a9c8e1bf361fa7fd3467a2163f994c79500835260408201527301010101010101010101010101010101010101016060820152606081526100d36080826101fd565b5190206040516100e46040826101fd565b600381526020810190622137b160e91b825251902060405160208101917fb9d8c78acf9b987311de6c7b45bb6a9c8e1bf361fa7fd3467a2163f994c79500835260408201527302020202020202020202020202020202020202026060820152606081526101526080826101fd565b51902060405190602082019283526040820152604081526101746060826101fd565b51902060405160208101917ff3adab05a0b3b07c9011fd977cdcc754e58ead1e1e726bc7485fd838981f036883526040820152604081526101b66060826101fd565b519020036101c057005b60405162461bcd60e51b81526020600482015260116024820152700cee4deeae040e6e8e4eac6e840d0c2e6d607b1b6044820152606490fd5b5f80fd5b90601f8019910116810190811067ffffffffffffffff82111761021f57604052565b634e487b7160e01b5f52604160045260245ffdfea264697066735822122057bde4e2d4bbb9009eb0951531ead25b5cd3262d024ce9b9ea6fa564daf63a2164736f6c634300081a0033",
+    "sourceMap": "152:1027:0:-:0;;;;;;;;;;;;;;;;;"
+  },
+  "deployedBytecode": {
+    "linkReferences": {},
+    "object": "0x60806040526004361015610011575f80fd5b5f3560e01c6371e5520114610024575f80fd5b346101f9575f3660031901126101f9577f6ceef4da3b8605bf55265a94cccf738064cb934b396231e09588e696d49bb3576040516100636040826101fd565b60058152602081019064416c69636560d81b825251902060405160208101917fb9d8c78acf9b987311de6c7b45bb6a9c8e1bf361fa7fd3467a2163f994c79500835260408201527301010101010101010101010101010101010101016060820152606081526100d36080826101fd565b5190206040516100e46040826101fd565b600381526020810190622137b160e91b825251902060405160208101917fb9d8c78acf9b987311de6c7b45bb6a9c8e1bf361fa7fd3467a2163f994c79500835260408201527302020202020202020202020202020202020202026060820152606081526101526080826101fd565b51902060405190602082019283526040820152604081526101746060826101fd565b51902060405160208101917ff3adab05a0b3b07c9011fd977cdcc754e58ead1e1e726bc7485fd838981f036883526040820152604081526101b66060826101fd565b519020036101c057005b60405162461bcd60e51b81526020600482015260116024820152700cee4deeae040e6e8e4eac6e840d0c2e6d607b1b6044820152606490fd5b5f80fd5b90601f8019910116810190811067ffffffffffffffff82111761021f57604052565b634e487b7160e01b5f52604160045260245ffdfea264697066735822122057bde4e2d4bbb9009eb0951531ead25b5cd3262d024ce9b9ea6fa564daf63a2164736f6c634300081a0033",
+    "sourceMap": "152:1027:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;152:1027:0;;;;454:66;152:1027;;;;;;:::i;:::-;;;;;;;;-1:-1:-1;;;152:1027:0;;;1138:22;;152:1027;;;1110:59;;152:1027;238:47;152:1027;;;238:47;;152:1027;621:42;238:47;;;;;1110:59;;;;;;:::i;:::-;152:1027;1100:70;;152:1027;;;;;;:::i;:::-;;;;;;;;-1:-1:-1;;;152:1027:0;;;1138:22;;152:1027;;;1110:59;;152:1027;238:47;152:1027;;;238:47;;152:1027;716:42;238:47;;;;;1110:59;;;;;;:::i;:::-;152:1027;1100:70;;152:1027;;802:28;152:1027;802:28;;152:1027;;;;;;;;802:28;;;238:47;802:28;;:::i;:::-;152:1027;792:39;;152:1027;;;871:39;;152:1027;333:70;152:1027;;;333:70;;152:1027;;871:39;;;238:47;871:39;;:::i;:::-;152:1027;861:50;;930:30;454:66;;152:1027;454:66;152:1027;;-1:-1:-1;;;454:66:0;;152:1027;;454:66;;;;152:1027;454:66;;;-1:-1:-1;;;454:66:0;;;;;;;152:1027;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;-1:-1:-1;152:1027:0;;;;;-1:-1:-1;152:1027:0"
+  },
+  "id": 0,
+  "metadata": {
+    "compiler": {
+      "version": "0.8.26+commit.8a97fa7a"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "name": "testGroupVector",
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "compilationTarget": {
+        "test/TypedDataArrayReference.t.sol": "TypedDataArrayReferenceTest"
+      },
+      "evmVersion": "cancun",
+      "libraries": {},
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "remappings": [
+        "@ensdomains/=lib/v4-core/node_modules/@ensdomains/",
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@uniswap/v3-core/=lib/v3-core/",
+        "@uniswap/v3-periphery/=lib/v3-periphery/",
+        "@uniswap/v4-core/=lib/v4-core/",
+        "@uniswap/v4-periphery/=lib/v4-periphery/",
+        "ds-test/=lib/v4-core/lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/v4-periphery/lib/v4-core/lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-gas-snapshot/=lib/v4-periphery/lib/permit2/lib/forge-gas-snapshot/src/",
+        "forge-std/=lib/v4-periphery/lib/v4-core/lib/forge-std/src/",
+        "hardhat/=lib/v4-core/node_modules/hardhat/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "permit2/=lib/v4-periphery/lib/permit2/",
+        "solmate/=lib/v4-periphery/lib/v4-core/lib/solmate/",
+        "v3-core/=lib/v3-core/",
+        "v3-periphery/=lib/v3-periphery/contracts/",
+        "v4-core/=lib/v4-core/src/",
+        "v4-periphery/=lib/v4-periphery/"
+      ],
+      "viaIR": true
+    },
+    "sources": {
+      "test/TypedDataArrayReference.t.sol": {
+        "keccak256": "0xc3a7488d27e40418516ae1e456c3452b7eec0a8849917d5ff5c5b1f31160a1ce",
+        "license": "UNLICENSED",
+        "urls": [
+          "bzz-raw://b47f7341858e61d0926338b1ae06c203d0a6435dde2945097f6dea20a8b83017",
+          "dweb:/ipfs/QmRsr51U8CyU1YsWkbwgZA95BzAkcfwTYjh6iqqtYPccjh"
+        ]
+      }
+    },
+    "version": 1
+  },
+  "methodIdentifiers": {
+    "testGroupVector()": "71e55201"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"testGroupVector\",\"outputs\":[],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"External compiler/reference harness for the lab02 dynamic struct-array vector.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"test/TypedDataArrayReference.t.sol\":\"TypedDataArrayReferenceTest\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@ensdomains/=lib/v4-core/node_modules/@ensdomains/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap/v3-core/=lib/v3-core/\",\":@uniswap/v3-periphery/=lib/v3-periphery/\",\":@uniswap/v4-core/=lib/v4-core/\",\":@uniswap/v4-periphery/=lib/v4-periphery/\",\":ds-test/=lib/v4-core/lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/v4-periphery/lib/v4-core/lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-gas-snapshot/=lib/v4-periphery/lib/permit2/lib/forge-gas-snapshot/src/\",\":forge-std/=lib/v4-periphery/lib/v4-core/lib/forge-std/src/\",\":hardhat/=lib/v4-core/node_modules/hardhat/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":permit2/=lib/v4-periphery/lib/permit2/\",\":solmate/=lib/v4-periphery/lib/v4-core/lib/solmate/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\",\":v4-core/=lib/v4-core/src/\",\":v4-periphery/=lib/v4-periphery/\"],\"viaIR\":true},\"sources\":{\"test/TypedDataArrayReference.t.sol\":{\"keccak256\":\"0xc3a7488d27e40418516ae1e456c3452b7eec0a8849917d5ff5c5b1f31160a1ce\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://b47f7341858e61d0926338b1ae06c203d0a6435dde2945097f6dea20a8b83017\",\"dweb:/ipfs/QmRsr51U8CyU1YsWkbwgZA95BzAkcfwTYjh6iqqtYPccjh\"]}},\"version\":1}"
+}

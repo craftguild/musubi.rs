@@ -1,0 +1,22 @@
+[package]
+name = "musubi-core"
+description = "Alloy-independent Ethereum values and artifact identity for Musubi"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+hex.workspace = true
+serde.workspace = true
+semver.workspace = true
+sha2.workspace = true
+sha3.workspace = true
+thiserror.workspace = true
+url.workspace = true
+
+[dev-dependencies]
+serde_json.workspace = true
+
+[lints]
+workspace = true

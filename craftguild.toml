@@ -1,0 +1,364 @@
+schema_version = 2
+rust_output_layout = "standard"
+standards_version = "0.1.0"
+
+[[releases]]
+id = "musubi"
+initial_version = "0.1.0"
+tag_prefix = "v"
+notes = "docs/releases"
+paths = [".agents", ".github", ".gitignore", "AGENTS.md", "Cargo.lock", "Cargo.toml", "LICENSE-APACHE", "LICENSE-MIT", "Makefile", "NOTICE.md", "README.md", "craftguild.toml", "crates", "docs", "external-acceptance", "release-fixture", "rust-toolchain.toml", "rustfmt.toml", "safe-v141-sdk-input", "safe-v141-sdk.toml", "scripts", "standards", "tests", "tools"]
+[[releases.cargo]]
+manifest = "Cargo.toml"
+lockfile = "Cargo.lock"
+workspace = true
+packages = ["musubi", "musubi-alloy", "musubi-cli", "musubi-codegen", "musubi-core", "musubi-runtime", "musubi-safe", "musubi-testkit"]
+
+[[policies]]
+kind = "publication"
+repository = "craftguild/musubi.rs"
+manifest = "Cargo.toml"
+
+[[policies]]
+kind = "dependencies"
+manifest = "Cargo.toml"
+[policies.layers]
+"musubi" = ["musubi-alloy", "musubi-core", "musubi-runtime", "musubi-safe"]
+"musubi-alloy" = ["musubi-core", "musubi-runtime"]
+"musubi-cli" = ["musubi-codegen", "musubi-core"]
+"musubi-codegen" = ["musubi-core", "musubi-runtime", "musubi-testkit"]
+"musubi-core" = []
+"musubi-runtime" = ["musubi-core"]
+"musubi-safe" = ["musubi-alloy", "musubi-core", "musubi-runtime"]
+"musubi-testkit" = ["musubi-codegen", "musubi-core", "musubi-runtime"]
+[policies.restricted]
+"musubi-safe-v141-generated" = ["musubi-alloy", "musubi-safe"]
+
+[[artifacts]]
+id = "musubi-cli"
+command = "musubi"
+project = "musubi.rs"
+kind = "rust"
+manifest = "Cargo.toml"
+lockfile = "Cargo.lock"
+package = "musubi-cli"
+inputs = ["Makefile", "tools/standards.sh", "scripts/python.sh", "standards/engine.json", "standards/launcher.py", "standards/make/common.mk", "crates/musubi-cli/assets/version-banner.txt"]
+
+[artifacts.build]
+toolchain = "1.95.0"
+
+[[adapters]]
+language = "rust"
+test = ["sh", "scripts/validate.sh"]
+format = ["sh", "scripts/python.sh", "scripts/standards-language.py", "format"]
+lint = ["sh", "scripts/python.sh", "scripts/standards-language.py", "lint"]
+
+[[commands]]
+id = "release-version-ownership"
+purpose = "Validate workspace ownership in memory without releasing or signing"
+phase = "check"
+argv = ["sh", "tools/standards.sh", "check-release-config"]
+
+[[commands]]
+id = "standards-tooling"
+purpose = "Check Python parsing and shell syntax of product tools"
+phase = "check"
+argv = ["sh", "scripts/python.sh", "scripts/standards-language.py", "tooling"]
+
+[[commands]]
+id = "cli-artifact-acceptance"
+purpose = "Verify the actual copied CLI, closed product metadata and SBOM offline; install only into a temporary destination"
+phase = "acceptance"
+argv = ["sh", "scripts/python.sh", "scripts/standards-acceptance.py"]
+
+[[generated]]
+owner = "musubi-safe-v141-generated"
+manifest = ".craftguild/ownership/musubi-safe-v141-generated.json"
+output_root = "crates/musubi-safe-v141-generated"
+reproduce = ["cargo", "+1.95.0", "run", "--locked", "--quiet", "--target-dir", "target/product-tests", "-p", "musubi-codegen", "--example", "reproduce-owned", "--", "safe-v141-sdk.toml", "{output}"]
+rust_size_exception = true
+
+[[sources]]
+pattern = "{AGENTS.md,NOTICE.md,README.md}"
+role = "documentation"
+reason = "Normative design, contributor instructions or user documentation"
+
+[[sources]]
+pattern = "Makefile"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = ".agents/skills/craftguild-standardize/SKILL.md"
+role = "documentation"
+reason = "Normative design, contributor instructions or user documentation"
+
+[[sources]]
+pattern = ".github/workflows/{ci,cli-assets,installer-acceptance}.yml"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-alloy/src/{convert.rs,executor.rs,lib.rs,read.rs}"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-alloy/tests/{anvil.rs,generated_client.rs}"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-cli/build.rs"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-cli/assets/README.md"
+role = "documentation"
+reason = "Normative design, contributor instructions or user documentation"
+
+[[sources]]
+pattern = "crates/musubi-cli/assets/version-banner.txt"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-cli/src/{args.rs,compatibility_output.rs,diagnostics.rs,doctor.rs,main.rs,parse.rs,run.rs,snapshot_io.rs,version.rs}"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-cli/src/args_tests.rs"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-cli/tests/{artifact_acceptance.rs,cli.rs,lifecycle.rs,sdk_identity.rs,version.rs}"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-codegen/examples/reproduce-owned.rs"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-codegen/src/{abi_json.rs,abi_parse.rs,abi_type.rs,ast.rs,ast_internal.rs,ast_type.rs,ast_type_parse.rs,bytecode.rs,canonical.rs,cargo_paths.rs,cargo_validation.rs,check_generated.rs,closed_json.rs,compatibility.rs,compatibility_surface.rs,compatibility_typed_data.rs,diagnostic.rs,generated_tree.rs,init.rs,input.rs,input_fs.rs,input_manifest.rs,ir.rs,lib.rs,limits.rs,manifest.rs,name_validation.rs,names.rs,output.rs,output_cleanup.rs,output_fs.rs,output_install.rs,output_read.rs,output_recovery.rs,output_target.rs,output_write.rs,owned_encoding.rs,owned_identity.rs,ownership.rs,ownership_io.rs,ownership_path.rs,package_identity.rs,process.rs,process_cleanup.rs,render.rs,render_abi.rs,render_artifact.rs,render_constructor.rs,render_contract.rs,render_contract_layout.rs,render_contract_tree.rs,render_generator.rs,render_layout.rs,render_names.rs,render_operation.rs,render_owned_tuple.rs,render_release.rs,render_source.rs,render_type_imports.rs,render_typed_data.rs,render_types.rs,render_validation.rs,runtime_source.rs,semantic_inventory.rs,snapshot.rs,snapshot_bytecode_validation.rs,snapshot_contract_validation.rs,snapshot_validation.rs,typed_data_evidence.rs,typed_data_hash_text.rs,typed_data_schema.rs,typed_data_snapshot_validation.rs,typed_data_vectors.rs}"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-codegen/src/{abi_event_tests.rs,abi_json_tests.rs,abi_tests.rs,abi_type_tests.rs,artifact_kind_tests.rs,ast_tests.rs,bytecode_tests.rs,canonical_abi_budget_tests.rs,cargo_validation_tests.rs,check_generated_tests.rs,compatibility_tests.rs,compatibility_typed_data_tests.rs,constructor_generation_tests.rs,event_evidence_tests.rs,fixed_point_tests.rs,generated_event_wire_tests.rs,generation_tests.rs,generator_namespace_tests.rs,init_tests.rs,input_fs_tests.rs,input_tests.rs,lifecycle_tests.rs,manifest_provenance_tests.rs,manifest_tests.rs,output_cleanup_tests.rs,output_install_tests.rs,output_ownership_tests.rs,output_recovery_tests.rs,output_term_tests.rs,output_tests.rs,owned_identity_tests.rs,owned_tuple_generation_tests.rs,owned_tuple_wire_tests.rs,ownership_conformance_tests.rs,ownership_tests.rs,process_tests.rs,render_validation_tests.rs,semantic_layout_tests.rs,snapshot_descriptor_tests.rs,snapshot_error_tests.rs,snapshot_schema_tests.rs,snapshot_validation_tests.rs,sparse_generation_tests.rs,test_generator.rs,typed_data_array_evidence_tests.rs,typed_data_codegen_tests.rs,typed_data_edge_evidence_tests.rs,typed_data_limit_tests.rs}"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-codegen/src/output_test_support.rs"
+role = "test-helper"
+reason = "Helpers used only by product regression tests"
+
+[[sources]]
+pattern = "crates/musubi-core/src/{abi.rs,address.rs,artifact.rs,bytes.rs,fixed.rs,generator.rs,integer.rs,lib.rs,runtime_source.rs,transaction.rs,typed_data.rs,value.rs}"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-core/src/{artifact_tests.rs,fixed_tests.rs}"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-core/src/generator/tests.rs"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-runtime/src/{backend.rs,codec.rs,deployment.rs,descriptor.rs,event.rs,lib.rs,operation.rs,revert.rs,typed_data.rs,typed_data_graph.rs,typed_data_type_text.rs,typed_value.rs}"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-runtime/src/{codec_tests.rs,deployment_tests.rs,event_tests.rs,operation_tests.rs,revert_tests.rs,typed_data_edge_tests.rs,typed_data_tests.rs}"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-safe-v141-generated/src/lib.rs"
+role = "generated"
+reason = "Retained SDK Rust output; full closed ownership and exact recorded-producer regeneration are mandatory"
+
+[[sources]]
+pattern = "crates/musubi-safe-v141-generated/src/safe_proxy_v141/{artifact.rs,constructor.rs,mod.rs,types.rs}"
+role = "generated"
+reason = "Retained SDK Rust output; full closed ownership and exact recorded-producer regeneration are mandatory"
+
+[[sources]]
+pattern = "crates/musubi-safe-v141-generated/src/safe_v141/{artifact.rs,constructor.rs,mod.rs,types.rs}"
+role = "generated"
+reason = "Retained SDK Rust output; full closed ownership and exact recorded-producer regeneration are mandatory"
+
+[[sources]]
+pattern = "crates/musubi-safe-v141-generated/src/safe_v141/events/{added_owner_403737a9bcc8cb0757ccb62646acc260.rs,approve_hash_2bef9bdbfcbe92afbcaece8680bde8a4.rs,changed_fallback_handler_a95155234a8811434b56cbbf97b12b4d.rs,changed_guard_fee51dfca3a9a84d5e5a434ccdf05d27.rs,changed_threshold_59a15bac9e7baac8a2c58cb80848046d.rs,disabled_module_a048d3987ae033bcd2d48ba372f523ab.rs,enabled_module_beaffc8be9b35b90ab668cd2501d2bcf.rs,execution_failure_c6c46933b6467a577a80509e1a294d20.rs,execution_from_module_failure_ffe11852dcdfcd2654d684d0dd1608d0.rs,execution_from_module_success_7caec4d4df2c92de75c3678b0a2c3b5a.rs,execution_success_fcf28d84781f29be4c61b5d028eb1f5d.rs,removed_owner_e2f763c61fca1a9757a9f05e55923a37.rs,safe_received_02969b286f8303a7ee86e518747acc2d.rs,safe_setup_89ea3fe134377a686e04826921bed8ce.rs,sign_msg_b1232c92260f4a123343a654345d77a1.rs}"
+role = "generated"
+reason = "Retained SDK Rust output; full closed ownership and exact recorded-producer regeneration are mandatory"
+
+[[sources]]
+pattern = "crates/musubi-safe-v141-generated/src/safe_v141/operations/{add_owner_with_threshold_cc0d88bc8bee437e811cd872872319c8.rs,approve_hash_8e93d54188d3f00a6e76e74298d492b0.rs,approved_hashes_512d95ff798cca72ee01d5a1d8befb47.rs,change_threshold_9fbff559c1e42c7dced5b8c8648d317c.rs,check_n_signatures_52352ed8c7be22741051cd28b350dcbc.rs,check_signatures_abc013ead0af4098b2ba7451abd12a06.rs,disable_module_88c48ea8eb8d3c03a7969d522673cb1b.rs,domain_separator_461ef608a4663b6d70ae02719c304282.rs,enable_module_c205497b39f7e9939810387a9f55dfd7.rs,encode_transaction_data_095cdc07b8895c41033ed3a5911b3114.rs,exec_transaction_7fc9efe77fb90b5bfe3b65c934252dfc.rs,exec_transaction_from_module_9c2aff26a9287ff37b9ec50704a1d309.rs,exec_transaction_from_module_return_data_42089baf17f8c071d9413b6fa8b642af.rs,get_chain_id_1f75dab939a800069b87f59c11d024b0.rs,get_modules_paginated_44a9888e72d30e4083b296ab9223caae.rs,get_owners_328246ce402605273c932f39aca330d8.rs,get_storage_at_9f89a63383610c18b1348ab35783b248.rs,get_threshold_1b40d913e12f8f5b1bd97b9518f535e8.rs,get_transaction_hash_bcc4e12845d2cdfc6c06565c4bd7d767.rs,is_module_enabled_49d246489a4246a36bccfe9654b8f3ec.rs,is_owner_bde7ab829711c847eb7cc88242fdaba0.rs,nonce_a0067875eb2e8b7a978a8e2f1dcf3a77.rs,remove_owner_ff5f7f48a2d5d7c45306e74d3b5e7ead.rs,set_fallback_handler_7548fc62319fc94bdd506899f6dba2f6.rs,set_guard_2bb13b58dfcd8059299b0286945e5115.rs,setup_fcc7a62f38184b838c2b27ee13b19c13.rs,signed_messages_745a2d2649c905c444f6f72cd7b15cf7.rs,simulate_and_revert_4f7dc02e929910ffe060754f1a7e4a88.rs,swap_owner_469594e6b836a2c3033264c535145cf1.rs,v_e_r_s_i_o_n_cde4a074aa9416345955647537c8e834.rs}"
+role = "generated"
+reason = "Retained SDK Rust output; full closed ownership and exact recorded-producer regeneration are mandatory"
+
+[[sources]]
+pattern = "crates/musubi-safe-v141-generated/src/safe_v141_typed_data/{descriptors.rs,mod.rs}"
+role = "generated"
+reason = "Retained SDK Rust output; full closed ownership and exact recorded-producer regeneration are mandatory"
+
+[[sources]]
+pattern = "crates/musubi-safe-v141-generated/src/safe_v141_typed_data/types/{e_i_p712_domain_f685aaa9f56d42d53f78ec4bb84b513c.rs,safe_tx_7e7640271108a26a4598c5f389adc6fd.rs}"
+role = "generated"
+reason = "Retained SDK Rust output; full closed ownership and exact recorded-producer regeneration are mandatory"
+
+[[sources]]
+pattern = "crates/musubi-safe/src/{hash.rs,lib.rs,operation.rs,registry.rs,signature.rs,transaction.rs,version.rs}"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-safe/src/{operation_tests.rs,signature_tests.rs}"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-safe/tests/safe_v141_anvil.rs"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-safe/tests/support/mod.rs"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-testkit/examples/inspect_generated.rs"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-testkit/src/{backend.rs,closed_json.rs,codec.rs,generated.rs,generated_cargo.rs,generated_generator.rs,generated_identity.rs,generated_inventory.rs,generated_layout.rs,generated_provenance.rs,generated_release.rs,generated_source.rs,generated_tree.rs,generated_type_string.rs,generated_types.rs,lib.rs}"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "crates/musubi-testkit/src/{generated_cargo_tests.rs,generated_inventory_tests.rs,generated_manifest_tests.rs,generated_path_tests.rs,generated_provenance_tests.rs,generated_release_tests.rs,generated_semantic_tests.rs,tests.rs}"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "crates/musubi-testkit/src/generated_test_fixture.rs"
+role = "test-helper"
+reason = "Helpers used only by product regression tests"
+
+[[sources]]
+pattern = "crates/musubi/src/lib.rs"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "external-acceptance/event-rebalance-v1/solidity/test/RebalanceEventReference.t.sol"
+role = "fixture"
+reason = "Fixed product ABI, compiler evidence, SDK inputs or consumer fixtures; reviewed artifact inventory and product gates retain provenance"
+
+[[sources]]
+pattern = "external-acceptance/abi-corpus-v1/README.md"
+role = "documentation"
+reason = "Normative design, contributor instructions or user documentation"
+
+[[sources]]
+pattern = "external-acceptance/typed-data-array-v1/solidity/test/TypedDataArrayReference.t.sol"
+role = "fixture"
+reason = "Fixed product ABI, compiler evidence, SDK inputs or consumer fixtures; reviewed artifact inventory and product gates retain provenance"
+
+[[sources]]
+pattern = "external-acceptance/typed-data-edge-v1/solidity/test/TypedDataEdgeReference.t.sol"
+role = "fixture"
+reason = "Fixed product ABI, compiler evidence, SDK inputs or consumer fixtures; reviewed artifact inventory and product gates retain provenance"
+
+[[sources]]
+pattern = "scripts/{artifact_inventory.py,check-generated.py,check-generated.sh,check-abi-corpus.sh,check-lines.sh,check-manifest-only-surface.sh,check-owned-sdk.py,check-safe-generated.sh,check_lines.py,extract-sdk-recovery.py,generated_ownership.py,generated_registry.py,install.sh,large_owner_vector.rs,ownership_io.py,ownership_unicode.py,python.sh,rebase-fixture-runtime.py,refresh-artifact-group.py,rename-no-replace.py,render-abi-corpus-manifest.py,sdk-cli.sh,snapshot-compiler-artifact.py,snapshot-abi-corpus.py,source_inventory.py,standards-language.py,standards-ownership.py,update-safe-v141-assets.sh,update-transaction.sh,validate.sh,validation_plan.py,verify-safe-source-provenance.sh}"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[sources]]
+pattern = "scripts/{test-canonical-abi-budget.py,test-check-lines.sh,test-compiler-artifact-snapshot.sh,test-consumer-resolution.sh,test-event-rebalance-acceptance.sh,test-generated-ownership.py,test-generated-rustfmt-boundary.sh,test-abi-corpus.sh,test-abi-corpus-manifest.sh,test-large-semantic-owners.py,test-ownership-io.py,test-safe-generated.sh,test-safe-source-provenance.sh,test-sdk-fixtures.sh,test-sdk-recovery.py,test-typed-data-array-acceptance.sh,test-typed-data-edge-acceptance.sh,test-update-transaction.sh,test-validation-plan.py,test_check_lines.py}"
+role = "test"
+reason = "Dedicated product domain, ABI, SDK, ownership, transaction or resource regression tests"
+
+[[sources]]
+pattern = "scripts/{line_test_support.py,ownership_test_support.py}"
+role = "test-helper"
+reason = "Helpers used only by product regression tests"
+
+[[sources]]
+pattern = "scripts/vendor/unicode-16.0.0/{CaseFolding.txt,LICENSE.txt,README.md}"
+role = "vendored"
+reason = "Unmodified third-party material or initializer-managed common entry with its own integrity authority"
+
+[[sources]]
+pattern = "standards/launcher.py"
+role = "vendored"
+reason = "Unmodified third-party material or initializer-managed common entry with its own integrity authority"
+
+[[sources]]
+pattern = "tests/fixtures/consumer-resolution/src/lib.rs"
+role = "fixture"
+reason = "Fixed product ABI, compiler evidence, SDK inputs or consumer fixtures; reviewed artifact inventory and product gates retain provenance"
+
+[[sources]]
+pattern = "tools/standards.sh"
+role = "implementation"
+reason = "First-party runtime, generator, public API or development operation; mixed Rust test regions are separated by the common parser"
+
+[[operations]]
+name = "check"
+artifact = "musubi-cli"
+build = ["musubi-cli"]
+[[operations.hooks]]
+id = "generated-ownership"
+stage = "evidence"
+argv = ["sh", "scripts/python.sh", "scripts/standards-ownership.py"]
+inputs = ["Cargo.toml", "Cargo.lock", "craftguild.toml", "safe-v141-sdk.toml", "scripts/generated-manifests.json", "scripts/standards-ownership.py", "scripts/generated_registry.py", "scripts/generated_ownership.py", "scripts/ownership_io.py", "scripts/ownership_unicode.py", "scripts/source_inventory.py", "crates/musubi-core/Cargo.toml", "crates/musubi-runtime/Cargo.toml", "crates/musubi-codegen/Cargo.toml", "crates/musubi-testkit/Cargo.toml", "crates/musubi-codegen/examples/reproduce-owned.rs"]
+input_dirs = ["crates/musubi-core/src", "crates/musubi-runtime/src", "crates/musubi-codegen/src", "crates/musubi-testkit/src", "safe-v141-sdk-input", "crates/musubi-safe-v141-generated"]
+output_dirs = [".craftguild/ownership"]
+
+[[operations]]
+name = "test"
+artifact = "musubi-cli"
+build = ["musubi-cli"]
+[[operations.hooks]]
+id = "generated-ownership"
+stage = "evidence"
+argv = ["sh", "scripts/python.sh", "scripts/standards-ownership.py"]
+inputs = ["Cargo.toml", "Cargo.lock", "craftguild.toml", "safe-v141-sdk.toml", "scripts/generated-manifests.json", "scripts/standards-ownership.py", "scripts/generated_registry.py", "scripts/generated_ownership.py", "scripts/ownership_io.py", "scripts/ownership_unicode.py", "scripts/source_inventory.py", "crates/musubi-core/Cargo.toml", "crates/musubi-runtime/Cargo.toml", "crates/musubi-codegen/Cargo.toml", "crates/musubi-testkit/Cargo.toml", "crates/musubi-codegen/examples/reproduce-owned.rs"]
+input_dirs = ["crates/musubi-core/src", "crates/musubi-runtime/src", "crates/musubi-codegen/src", "crates/musubi-testkit/src", "safe-v141-sdk-input", "crates/musubi-safe-v141-generated"]
+output_dirs = [".craftguild/ownership"]
+
+[[installers]]
+artifact = "musubi-cli"
+repository = "craftguild/musubi.rs"
+release_group = "musubi"
+output = "scripts/install.sh"
+
+[[sources]]
+pattern = "scripts/standards-acceptance.py"
+role = "test-helper"
+reason = "Invokes Rust CLI artifact acceptance with the verified common context; product assertions live in Rust"
+
+[[sources]]
+pattern = "docs/**"
+role = "documentation"
+reason = "English product guides, design authorities, stable numbered ADRs and design mockups"
+
+[[sources]]
+pattern = ".agents/skills/beads/SKILL.md"
+role = "documentation"
+reason = "Shared local task workflow guidance"

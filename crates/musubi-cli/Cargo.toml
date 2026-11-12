@@ -1,0 +1,26 @@
+[package]
+name = "musubi-cli"
+description = "Command-line interface for Musubi"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "musubi"
+path = "src/main.rs"
+
+[dependencies]
+craftguild-cli.workspace = true
+clap.workspace = true
+musubi-codegen = { path = "../musubi-codegen" }
+musubi-core = { path = "../musubi-core" }
+rustix.workspace = true
+serde_json.workspace = true
+tempfile.workspace = true
+
+[build-dependencies]
+craftguild-cli-build.workspace = true
+
+[lints]
+workspace = true

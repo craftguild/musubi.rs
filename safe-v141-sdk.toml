@@ -1,0 +1,36 @@
+schema_version = "musubi/config-v4"
+
+[runtime]
+source = "path"
+root = "."
+
+[package]
+name = "musubi-safe-v141-generated"
+version = "0.1.0"
+edition = "2024"
+
+[generation]
+output = "crates/musubi-safe-v141-generated"
+
+[[contracts]]
+id = "safe_v141"
+kind = "deployable"
+abi = "safe-v141-sdk-input/safe-v1.4.1.abi.json"
+creation_bytecode = "safe-v141-sdk-input/safe-v1.4.1.creation.json"
+runtime_bytecode = "safe-v141-sdk-input/safe-v1.4.1.runtime.json"
+metadata = "safe-v141-sdk-input/safe-v1.4.1.metadata.json"
+
+[[contracts]]
+id = "safe_proxy_v141"
+kind = "deployable"
+abi = "safe-v141-sdk-input/safe-proxy-v1.4.1.abi.json"
+creation_bytecode = "safe-v141-sdk-input/safe-proxy-v1.4.1.creation.json"
+runtime_bytecode = "safe-v141-sdk-input/safe-proxy-v1.4.1.runtime.json"
+metadata = "safe-v141-sdk-input/safe-proxy-v1.4.1.metadata.json"
+
+[[typed_data]]
+id = "safe_v141_hash"
+rust_module = "safe_v141_typed_data"
+authority = "closed-schema-v1"
+schema = "safe-v141-sdk-input/safe-v1.4.1.typed-data-schema.json"
+vectors = "safe-v141-sdk-input/safe-v1.4.1.typed-data-vectors.json"

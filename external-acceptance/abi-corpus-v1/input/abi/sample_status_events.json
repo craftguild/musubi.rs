@@ -1,0 +1,85 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "address"
+      }
+    ],
+    "name": "FixtureEventForAbiCoverage000",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "address"
+      }
+    ],
+    "name": "FixtureEventForAbiCoverage001",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "uint64"
+      }
+    ],
+    "name": "FixtureEventForAbiCoverage002",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "uint64"
+      }
+    ],
+    "name": "FixtureEventForAbiCoverage003",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "fixtureParameterForAbiCoverage001",
+        "type": "uint64"
+      }
+    ],
+    "name": "FixtureEventForAbiCoverage004",
+    "type": "event"
+  }
+]

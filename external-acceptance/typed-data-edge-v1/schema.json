@@ -1,0 +1,28 @@
+{
+  "roots": [
+    {
+      "kind": "struct_hash",
+      "type": "Edge"
+    }
+  ],
+  "schema_version": "musubi/typed-data-schema-v1",
+  "types": [
+    {
+      "fields": [
+        {
+          "name": "tick",
+          "type": "int24"
+        },
+        {
+          "name": "tag",
+          "type": "bytes4"
+        },
+        {
+          "name": "weights",
+          "type": "uint16[2]"
+        }
+      ],
+      "name": "Edge"
+    }
+  ]
+}

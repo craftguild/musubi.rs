@@ -1,0 +1,28 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "bytes32"
+      }
+    ],
+    "name": "FixtureEventForAbiCoverage000",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "fixtureParameterForAbiCoverage000",
+        "type": "bytes32"
+      }
+    ],
+    "name": "FixtureEventForAbiCoverage001",
+    "type": "event"
+  }
+]

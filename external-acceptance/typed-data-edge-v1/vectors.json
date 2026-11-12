@@ -1,0 +1,28 @@
+{
+  "evidence": {
+    "artifact_sha256": "0x50e5fda1aacb1dde31ac618bda8698a26e10a70edadd33ad6ea567416ef9f703",
+    "artifact_target": "test/TypedDataEdgeReference.t.sol:TypedDataEdgeReferenceTest",
+    "compiler_settings_sha256": "0x97187492aed4dc74e6d37c80ca0e6160753fcfd22e4e1cd3f38a93da9fdb481c",
+    "compiler_version": "0.8.26+commit.8a97fa7a",
+    "solidity_source_path": "test/TypedDataEdgeReference.t.sol",
+    "solidity_source_sha256": "0xac5c310efff0ea0120292719f0fb3ae87a7a17a96b8e598ea06dada16b553862",
+    "vector_command": "cd contract && forge test --match-path test/TypedDataEdgeReference.t.sol --match-test testEdgeVector -vv"
+  },
+  "schema_version": "musubi/typed-data-vectors-v1",
+  "vectors": [
+    {
+      "root": "Edge",
+      "struct_hash": "0xbcb950b91075be76a296e92895a1940cc3d691988906eac237a7c19e546ef545",
+      "type_hash": "0x9725f5cb8d96d8246decae61272937776dcef90446bf67e742cd941d7d875985",
+      "type_string": "Edge(int24 tick,bytes4 tag,uint16[2] weights)",
+      "value": {
+        "tag": "0xdeadbeef",
+        "tick": "-8388608",
+        "weights": [
+          "0",
+          "65535"
+        ]
+      }
+    }
+  ]
+}

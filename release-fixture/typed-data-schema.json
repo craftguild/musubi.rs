@@ -1,0 +1,30 @@
+{
+  "schema_version": "musubi/typed-data-schema-v1",
+  "types": [
+    {
+      "name": "EIP712Domain",
+      "fields": [
+        { "name": "chainId", "type": "uint256" },
+        { "name": "verifyingContract", "type": "address" }
+      ]
+    },
+    {
+      "name": "SafeTx",
+      "fields": [
+        { "name": "to", "type": "address" },
+        { "name": "value", "type": "uint256" },
+        { "name": "data", "type": "bytes" },
+        { "name": "operation", "type": "uint8" },
+        { "name": "safeTxGas", "type": "uint256" },
+        { "name": "baseGas", "type": "uint256" },
+        { "name": "gasPrice", "type": "uint256" },
+        { "name": "gasToken", "type": "address" },
+        { "name": "refundReceiver", "type": "address" },
+        { "name": "nonce", "type": "uint256" }
+      ]
+    }
+  ],
+  "roots": [
+    { "kind": "typed_data", "type": "SafeTx", "domain": "EIP712Domain" }
+  ]
+}

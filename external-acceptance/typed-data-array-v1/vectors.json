@@ -1,0 +1,32 @@
+{
+  "evidence": {
+    "artifact_sha256": "0xdff5d1a88adb592f33e13d2b385441dbeb06d6d8fa1e924e713abc68057539c8",
+    "artifact_target": "test/TypedDataArrayReference.t.sol:TypedDataArrayReferenceTest",
+    "compiler_settings_sha256": "0x808dfd86cc002cca6f110c5b8b5ac454e6b97ddd6aef867f8d162817d738be7d",
+    "compiler_version": "0.8.26+commit.8a97fa7a",
+    "solidity_source_path": "contract/test/TypedDataArrayReference.t.sol",
+    "solidity_source_sha256": "0xe341844f737afa29ae0155bcda7a54a7246179a5f4465da3cf0de75e03439cfc",
+    "vector_command": "cd contract && forge test --match-test testGroupVector -vv"
+  },
+  "schema_version": "musubi/typed-data-vectors-v1",
+  "vectors": [
+    {
+      "root": "Group",
+      "struct_hash": "0x6ceef4da3b8605bf55265a94cccf738064cb934b396231e09588e696d49bb357",
+      "type_hash": "0xf3adab05a0b3b07c9011fd977cdcc754e58ead1e1e726bc7485fd838981f0368",
+      "type_string": "Group(Person[] members)Person(string name,address wallet)",
+      "value": {
+        "members": [
+          {
+            "name": "Alice",
+            "wallet": "0x0101010101010101010101010101010101010101"
+          },
+          {
+            "name": "Bob",
+            "wallet": "0x0202020202020202020202020202020202020202"
+          }
+        ]
+      }
+    }
+  ]
+}

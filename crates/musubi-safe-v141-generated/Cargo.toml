@@ -1,0 +1,12 @@
+[package]
+name = "musubi-safe-v141-generated"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+publish = false
+
+[workspace]
+
+[dependencies]
+musubi-core = { path = "../.././crates/musubi-core" }
+musubi-runtime = { path = "../.././crates/musubi-runtime" }

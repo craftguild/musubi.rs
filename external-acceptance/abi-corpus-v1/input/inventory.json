@@ -1,0 +1,105 @@
+{
+  "schema_version": "musubi/abi-corpus-inventory-v1",
+  "contracts": [
+    {
+      "id": "aggregator_v3",
+      "abi_sha256": "0x26ae664a64c6c253b5a65a2777f4227ddca994ada02633b1170546ef2928a39a"
+    },
+    {
+      "id": "erc20",
+      "abi_sha256": "0x3596540d5829e56dfd7905efa7609c41ddd2970946e8a413c0ea24c37c70abaf"
+    },
+    {
+      "id": "erc20_events",
+      "abi_sha256": "0x8757408757749725b39c6f80170683919887be42d3a73b031483732c3e7024f9"
+    },
+    {
+      "id": "erc20_metadata",
+      "abi_sha256": "0x9be03227b849849154588c6601fe1edd3dfbed7799d2ef7407e1a62ed66b797a"
+    },
+    {
+      "id": "erc20_read",
+      "abi_sha256": "0xad7ddc77a5f9c2b5d2d1e1507648ba4f77c60c44b69590d973db0119b7f2fcc3"
+    },
+    {
+      "id": "safe_v141",
+      "abi_sha256": "0x9e8811360636d23743a71348b6033afe6ba5cbc19ecafbeec3af001f58cba78d"
+    },
+    {
+      "id": "sample_aggregate",
+      "abi_sha256": "0xf2c7b4e6919c460351ec0a9b287bef19076c00b939cada24d0302eae01376e80"
+    },
+    {
+      "id": "sample_execution_events",
+      "abi_sha256": "0x254a48a683a963e2c69bcf4f6a22b2687e08757df9bccdab7b68da267a523716"
+    },
+    {
+      "id": "sample_executor",
+      "abi_sha256": "0x80020a3e6bee08f6cf3aa0433fdfdf986e398a83f5d2cc5d99da9f0e2aa42e15"
+    },
+    {
+      "id": "sample_factory",
+      "abi_sha256": "0xc180a6cfda0547616cb650533b0e74d774589eb9efeb0a21383cf50c9bd1fdec"
+    },
+    {
+      "id": "sample_factory_events",
+      "abi_sha256": "0xdd80e6c5510c1f025c29f08ea9bcae1f15b608045bcd6f816057b8985122975c"
+    },
+    {
+      "id": "sample_oracle_events",
+      "abi_sha256": "0x47ecdbae7959be9b75daa57ce1058ae480c96e990c6cee7771d5420c5377b163"
+    },
+    {
+      "id": "sample_preview",
+      "abi_sha256": "0x41d5ec0f52a2ffc72c771be0b886a80404537c7e48ba46214b0760638061ed1b"
+    },
+    {
+      "id": "sample_read",
+      "abi_sha256": "0xfac4c4b86f55b18d87e23d9584aebd9384d59b49057aa791ac766cac106cdae5"
+    },
+    {
+      "id": "sample_registry",
+      "abi_sha256": "0xc40359cbd9657d1f04f956acc3be0561f30a8e34f8a2db8d74a8fab1672bd664"
+    },
+    {
+      "id": "sample_registry_events",
+      "abi_sha256": "0x84613cc04b352a3c10120ad70d20855a139b3c3d4cd02fda31cb0075e9aed44d"
+    },
+    {
+      "id": "sample_status_events",
+      "abi_sha256": "0x4aaa889e1ad0318e161c3352662549ea3c8f7d11f0aebe6f605af664013d610a"
+    },
+    {
+      "id": "uniswap_v3_factory",
+      "abi_sha256": "0x7cf42afb50f2031591cc30ec6294d1c25b7442ab4c7b3033dc49426d37696944"
+    },
+    {
+      "id": "uniswap_v3_pool",
+      "abi_sha256": "0x8f554d11f679f0ffb30cddf8dfca2fd1e975ab4943b3bac203ad3bafa5f90eea"
+    },
+    {
+      "id": "uniswap_v3_pool_events",
+      "abi_sha256": "0x1c34751f26e489848442772d6a1dc8da8115eb4ad9c9270439c483c051bde862"
+    },
+    {
+      "id": "uniswap_v3_position_manager",
+      "abi_sha256": "0xfdbae874d3360a811dc03df2bea1eadb6fb4417fbbf50c25e37f4c8eee8b1521"
+    },
+    {
+      "id": "uniswap_v3_swap_router",
+      "abi_sha256": "0x11c6fbc48db624946c2287324bdf274018cce9f6ba47686ee2150722fa6217da"
+    },
+    {
+      "id": "uniswap_v4_pool_manager_events",
+      "abi_sha256": "0x4512e3e49e76025a0b4b9c1a09596dff1b5f9edf4ab3ecb83ca2df7ddfd3ee47"
+    },
+    {
+      "id": "uniswap_v4_position_manager",
+      "abi_sha256": "0x2ba511423a0bcf1b1ccbbe85a15498c74ec32ba0b29028a68a0a79ce473b6eaf"
+    },
+    {
+      "id": "uniswap_v4_state_view",
+      "abi_sha256": "0x90e263993969123f9975530a16639c90c13a41aa3299b4fc02aaf547f05488d9"
+    }
+  ]
+}

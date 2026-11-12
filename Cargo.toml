@@ -1,0 +1,62 @@
+[workspace]
+members = [
+    "crates/musubi-cli",
+    "crates/musubi-alloy",
+    "crates/musubi-codegen",
+    "crates/musubi-core",
+    "crates/musubi",
+    "crates/musubi-runtime",
+    "crates/musubi-safe",
+    "crates/musubi-testkit",
+]
+exclude = ["crates/musubi-safe-v141-generated"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT OR Apache-2.0"
+
+[workspace.dependencies]
+craftguild-cli = { git = "https://github.com/craftguild/standards.rs", rev = "6852b210a9a614920bc5be2187f2705f46db978d" }
+craftguild-cli-build = { git = "https://github.com/craftguild/standards.rs", rev = "6852b210a9a614920bc5be2187f2705f46db978d" }
+caseless = "=0.2.2"
+alloy-dyn-abi = "1.2.0"
+alloy-eips = "=1.0.35"
+alloy-json-abi = "1.2.0"
+alloy-network = "=1.0.35"
+alloy-network-primitives = "=1.0.35"
+alloy-primitives = "1.2.0"
+alloy-provider = "=1.0.35"
+alloy-rpc-types-eth = "=1.0.35"
+alloy-signer = "=1.0.35"
+alloy-signer-local = "=1.0.35"
+clap = { version = "4.5.47", features = ["derive"] }
+futures = "0.3.31"
+hex = "0.4.3"
+ruint = { version = "1.12.4", default-features = false }
+rustix = { version = "1.1.4", features = ["fs", "process"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.143"
+semver = "1.0.28"
+sha2 = "0.10.9"
+sha3 = "0.10.8"
+tempfile = "3.21.0"
+thiserror = "2.0.16"
+tokio = { version = "=1.47.1", features = ["macros", "rt-multi-thread"] }
+toml = "0.9.5"
+url = "2.5.0"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
