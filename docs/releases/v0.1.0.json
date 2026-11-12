@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "group": "musubi",
+  "config_hash": "2f1f6ee83b224c3ab4c20549361501611dfa326d0550de1f3a7bf588c225c046",
+  "head": "fdce3f0c1f33964822a0f75e51e786fbe93875f8",
+  "base": null,
+  "current": "0.1.0",
+  "next": "0.1.0",
+  "tag": "v0.1.0",
+  "bump": "none",
+  "mode": "normal",
+  "prepared": false,
+  "receipt_path": "docs/releases/v0.1.0.json",
+  "notes": "# v0.1.0\n\nGroup: `musubi`\n\nCompare: `repository root (initial release)` → `fdce3f0c1f33964822a0f75e51e786fbe93875f8`\n\n## Changes\n\n- feat: initial import (fdce3f0c1f33964822a0f75e51e786fbe93875f8)\n",
+  "changes": [
+    {
+      "path": "docs/releases/v0.1.0.md",
+      "before": null,
+      "after": "b312f5e96f5d44e469641144aaae3e3e294e5311f7bf02cad82cdc1620a21302"
+    }
+  ]
+}
