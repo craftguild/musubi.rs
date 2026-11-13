@@ -58,10 +58,7 @@ musubi.rs records it as `unverified`.
 
 ## Build requirements
 
-Use Rust/Cargo **1.95.0**, a native linker, Git, Make, Python **3.11+** and curl.
-The repository pins standards **v0.6.1**; explicit setup restores its verified
-engine on macOS arm64 or Linux x86_64 GNU. Normal builds/checks do not obtain an
-engine, compiler or dependencies. No global standards command is needed.
+Use Rust/Cargo **1.95.0**, a native linker, Git, Make, Python **3.11+** and curl. The repository pins standards **v0.6.2**; explicit setup restores its verified engine on macOS arm64 or Linux x86_64 GNU. Normal builds/checks do not obtain an engine, compiler or dependencies. No global standards command is needed.
 
 Checks also use rustfmt, Clippy, tokei **15.0.0**, ripgrep (`rg`), `jq` and the locked downstream
 consumer fixture. Prepare that fixture before the full check:

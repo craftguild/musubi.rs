@@ -4,7 +4,7 @@ Use Rust/Cargo 1.95.0, rustfmt, Clippy, a native linker, Make, Git, Python 3.11+
 curl and tokei 15.0.0. Source-build engine hosts are macOS arm64 and Linux x86_64
 GNU. Runtime Linux/macOS support is distinct from host qualification.
 
-Explicitly prepare the pinned standards v0.6.1 engine and locked dependencies:
+Explicitly prepare the pinned standards v0.6.2 engine and locked dependencies:
 
 ```sh
 make setup

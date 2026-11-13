@@ -2,12 +2,7 @@
 
 ## Status
 
-Accepted product contracts are defined here and by the [ADR index](README.md).
-[ADR 0020](../adr/0020-craftguild-standards-adoption.md) replaces earlier local build,
-physical/test-inclusive size rules and distribution implementation with the fixed
-standards v0.6.1 engine. It preserves the protocol and ownership contracts below.
-Current qualification and review state live in Beads, independently of accepted
-design and archived historical evidence.
+Accepted product contracts are defined here and by the [ADR index](README.md). [ADR 0020](../adr/0020-craftguild-standards-adoption.md) replaces earlier local build, physical/test-inclusive size rules and distribution implementation with the fixed standards v0.6.2 engine. It preserves the protocol and ownership contracts below. Current qualification and review state live in Beads, independently of accepted design and archived historical evidence.
 
 The product is Musubi (`musubi.rs`); its executable is `musubi`, CLI package is
 `musubi-cli`, and opt-in consumer facade is `musubi`. Root help and human version

@@ -11,6 +11,9 @@ paths = [".agents", ".github", ".gitignore", "AGENTS.md", "Cargo.lock", "Cargo.t
 [[releases.cargo]]
 manifest = "Cargo.toml"
 lockfile = "Cargo.lock"
+additional_lockfiles = [
+  "tests/fixtures/consumer-resolution/Cargo.lock",
+]
 workspace = true
 packages = ["musubi", "musubi-alloy", "musubi-cli", "musubi-codegen", "musubi-core", "musubi-runtime", "musubi-safe", "musubi-testkit"]
 
