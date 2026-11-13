@@ -13,6 +13,12 @@ owned Rust values, keeping Alloy behind the runtime and optional adapters.
 Release binaries cover Linux x86_64 GNU and macOS arm64; libraries and other
 build targets are consumed from source.
 
+> [!WARNING]
+> This project has not reached version 1.0 and may be unstable.
+> Its behavior and specifications may change, and upgrades may require manual migration.
+> Our team uses it in internal production systems to refine its design and implementation, but it may not meet your requirements.
+> Please keep these limitations in mind when using it.
+
 ## Quick start
 
 Release binaries are available for Linux x86_64 GNU and macOS arm64 from
