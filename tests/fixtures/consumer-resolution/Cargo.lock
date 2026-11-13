@@ -1789,7 +1789,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-core"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "hex",
  "semver 1.0.28",
@@ -1802,7 +1802,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-runtime"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "alloy-dyn-abi",
  "alloy-primitives",

@@ -2586,7 +2586,7 @@ dependencies = [
 
 [[package]]
 name = "musubi"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "musubi-alloy",
  "musubi-core",
@@ -2596,7 +2596,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-alloy"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "alloy-eips",
  "alloy-network",
@@ -2614,7 +2614,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-cli"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "clap",
  "craftguild-cli",
@@ -2628,7 +2628,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-codegen"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "caseless",
  "hex",
@@ -2648,7 +2648,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-core"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "hex",
  "semver 1.0.28",
@@ -2662,7 +2662,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-runtime"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "alloy-dyn-abi",
  "alloy-primitives",
@@ -2676,7 +2676,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-safe"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "alloy-network",
  "alloy-primitives",
@@ -2704,7 +2704,7 @@ dependencies = [
 
 [[package]]
 name = "musubi-testkit"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "futures",
  "hex",

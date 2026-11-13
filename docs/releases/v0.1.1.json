@@ -1,0 +1,37 @@
+{
+  "schema_version": 2,
+  "group": "musubi",
+  "config_hash": "26114e36fb4131cf65cf3ab0796176ab55c652f82e29fc0fb37a83249c3dec0d",
+  "head": "87730bd20f00a1e059c132982fed5b58361c1b09",
+  "base": "v0.1.0",
+  "current": "0.1.0",
+  "next": "0.1.1",
+  "tag": "v0.1.1",
+  "bump": "patch",
+  "mode": "normal",
+  "prepared": false,
+  "receipt_path": "docs/releases/v0.1.1.json",
+  "notes": "# v0.1.1\n\nGroup: `musubi`\n\nCompare: `v0.1.0` → `87730bd20f00a1e059c132982fed5b58361c1b09`\n\n## Changes\n\n- fix(readme): clarify pre-1.0 stability and upgrade expectations (bb968ecc1c6d87f1e0372dce4127eb410d493290)\n- fix(build): align release preparation with standards v0.6.2 (87730bd20f00a1e059c132982fed5b58361c1b09)\n",
+  "changes": [
+    {
+      "path": "Cargo.toml",
+      "before": "8856b1f9c73ffe5e86fa9d044867613d7e0ed3d7050e45e92d191fb529bb29de",
+      "after": "bcb4114a2879b3a4a50e9fbaf098e1782e368994149a7e751c92b3194893a9d7"
+    },
+    {
+      "path": "Cargo.lock",
+      "before": "44b88ab0500384230aad47f4d13417deb0b20a44e0a3b196b506f1492d1084e2",
+      "after": "3f32535f3314354d393c64017451a17c4f2c2fcafcfe764c4249810c31923b62"
+    },
+    {
+      "path": "tests/fixtures/consumer-resolution/Cargo.lock",
+      "before": "9a912f2c38c24ec39c1bb77d59e8d5d8674320969538d0a9f110ab3a00a94c5c",
+      "after": "8a346acb40f1baae47213fe28f801cdcbaf51eba604ab4cec69284bdf8f46b07"
+    },
+    {
+      "path": "docs/releases/v0.1.1.md",
+      "before": null,
+      "after": "a29893e7145b570925c55ecc2dc3a8adc1b0b1a3b5baaae50c43ed408f4b1add"
+    }
+  ]
+}
